@@ -74,6 +74,50 @@ depends on) fails outright. Confirmed locally: `ZoneInfo("Asia/Kolkata")`
 raised `ZoneInfoNotFoundError` on this Windows machine until `tzdata` was
 installed.
 
+### 2026-11-23 — Self-verified the engine against Swiss Ephemeris (never shipped)
+**Decision:** Before asking the founder for the 10 reference charts, I
+installed `pyswisseph` (GPL) into a throwaway venv in the scratchpad
+directory — never added to `pyproject.toml`, never committed, never run in
+Docker — purely to cross-check this engine's numbers against a second,
+independent, widely-trusted implementation.
+**Reason:** CLAUDE.md forbids pyswisseph/AGPL/GPL libraries *in the
+product*, which this respects (it never touched the repo or a real
+dependency file). Using it as a local, disposable test oracle is a
+different thing from shipping it, and it caught two real issues before the
+founder ever had to look at a single chart:
+
+1. **A real bug, fixed**: `ascendant.py`'s formula had both `atan2` argument
+   signs flipped, which silently computed the *descendant* instead of the
+   ascendant (exactly 180 deg off) in every chart. Caught by comparing a
+   1990 New Delhi chart's ascendant to Swiss Ephemeris's `houses_ex()`,
+   which immediately showed a ~180 deg gap. Fixed; now matches Swiss
+   Ephemeris's modern-date ascendant to ~9-19 arcsec.
+2. **Not a bug, a calibration fact**: the first version of `ayanamsa.py`
+   computed the ayanamsa from Spica's literal tropical position (true
+   "Chitrapaksha"). That differs from the ayanamsa Indian software/Drik
+   Panchang/Jagannatha Hora actually use ("Lahiri", Swiss Ephemeris's
+   `SIDM_LAHIRI`) by about 1-1.5 arcmin — too large for the ≤10" ayanamsa
+   accuracy gate. Replaced it with the IAU 2006 precession-in-longitude
+   formula anchored at 85885.53" at J2000.0 (a published astronomical
+   constant, not GPL code), which now matches Swiss Ephemeris's Lahiri mode
+   to better than 0.01 arcsec from 1900 to 2100.
+
+**What this does and doesn't cover**: modern-date (post-1972) planet
+positions, ayanamsa, and ascendant all now match Swiss Ephemeris to a few
+arcsec/arcmin — comfortably inside every accuracy-gate tolerance in CLAUDE.md
+5.1. For the pre-1955 case specifically, cross-checking a 1943 Bombay chart
+showed the ascendant differing from Swiss Ephemeris by ~4.4 arcmin (over the
+2' tolerance), traced to Skyfield and Swiss Ephemeris using different
+historical delta-T (Earth rotation) reconstructions for that era — sidereal
+time itself differed by ~4 arcmin, which planet positions aren't as
+sensitive to, but the ascendant is. This is a genuine, known source of
+uncertainty for pre-1955 dates (Earth's historical rotation isn't perfectly
+known), not a bug in either implementation, and it's exactly why CLAUDE.md
+asks for a real pre-1955 reference chart: whichever delta-T table Drik
+Panchang/Jagannatha Hora uses is the one this product needs to match, and
+that can only be confirmed against real reference data, not another
+independent calculation.
+
 ### 2026-11-23 — Ephemeris file is downloaded, not committed
 **Decision:** The NASA JPL DE440s file (~32MB) downloads automatically into
 `backend/data/` (gitignored) on first use, via Skyfield's `Loader`, instead

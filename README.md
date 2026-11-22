@@ -49,10 +49,29 @@ sign/house/nakshatra/dignity, the navamsa (D9) chart, and the full
 Vimshottari dasha timeline. There's no place-name search yet — you give
 latitude/longitude directly (see DECISIONS.md, 2026-11-23 entry on this).
 
-**Important — this hasn't been accuracy-checked yet.** The chart math (ayanamsa,
-planet positions, houses, dashas) needs to be checked against 10 real
-reference charts before it can be trusted for real predictions. See "What I
-still need from you" below.
+**Status: self-verified, not yet founder-verified.** I cross-checked this
+engine's ayanamsa, planet positions, and ascendant against an independent
+implementation (Swiss Ephemeris, used only as a one-off local test, never
+part of this product — see DECISIONS.md). That caught and fixed a real bug
+(the ascendant formula was silently computing the descendant) and one
+calibration issue (the ayanamsa formula). For modern dates, this engine now
+matches that independent implementation to within a few arcseconds —
+comfortably inside CLAUDE.md's accuracy targets.
+
+The one open question: for a 1943 test case, the ascendant differed from
+the independent check by about 4 arcminutes (over the 2' target), traced to
+historical uncertainty in Earth's rotation rate (delta-T) — both
+implementations make a different, defensible choice there, and only a real
+reference chart can say which one actually matches what Drik
+Panchang/Jagannatha Hora produce. That's what the 10 reference charts below
+are for.
+
+**2026-11-23: the founder opted to skip gathering the 10 reference charts
+for now** (no browser-automation tool was available in this session to
+fetch them automatically, and doing it by hand was deprioritized). Phase 1
+proceeds on the strength of the self-verification above. The pre-1955
+ascendant precision question remains open — worth revisiting before this
+engine is used for real predictions involving pre-1955 births.
 
 ## Running the tests
 
@@ -99,9 +118,10 @@ jyotish-guru/
 ## Current status: Phase 1 in progress
 
 Phase 0 (repo structure, Docker Compose, CI) is done. Phase 1's engine code
-is written and unit-tested (40 tests passing, covering ayanamsa, planet
-positions, houses, nakshatra, dignity, navamsa, and Vimshottari dasha) and
-the `/chart` endpoint works end-to-end.
+is written, unit-tested (41 tests passing, covering ayanamsa, planet
+positions, houses, nakshatra, dignity, navamsa, and Vimshottari dasha), and
+self-verified against an independent implementation. The `/chart` endpoint
+works end-to-end.
 
 ### What I still need from you to finish Phase 1
 

@@ -5,7 +5,13 @@ apparent sidereal time, in degrees), obliquity of the ecliptic eps, and
 geographic latitude phi, the tropical ecliptic longitude of the ascendant
 is:
 
-    tan(Asc) = -cos(RAMC) / (sin(eps) * tan(phi) + cos(eps) * sin(RAMC))
+    tan(Asc) = cos(RAMC) / -(sin(eps) * tan(phi) + cos(eps) * sin(RAMC))
+
+Implemented via atan2(numerator, denominator) rather than atan() so the
+quadrant comes out right automatically (an earlier version of this file had
+both signs flipped, which silently computed the descendant instead of the
+ascendant -- caught by cross-checking against Swiss Ephemeris, see
+DECISIONS.md).
 """
 
 import math
@@ -40,7 +46,7 @@ def ascendant_tropical_longitude_deg(
     eps = math.radians(mean_obliquity_deg(t))
     phi = math.radians(latitude_deg)
 
-    numerator = -math.cos(ramc)
-    denominator = math.sin(eps) * math.tan(phi) + math.cos(eps) * math.sin(ramc)
+    numerator = math.cos(ramc)
+    denominator = -(math.sin(eps) * math.tan(phi) + math.cos(eps) * math.sin(ramc))
     asc = math.degrees(math.atan2(numerator, denominator))
     return asc % 360.0

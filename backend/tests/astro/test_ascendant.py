@@ -38,3 +38,17 @@ def test_ascendant_changes_over_a_day() -> None:
     asc1 = ascendant_tropical_longitude_deg(t1, 28.6139, 77.2090)
     asc2 = ascendant_tropical_longitude_deg(t2, 28.6139, 77.2090)
     assert asc1 != asc2
+
+
+def test_ascendant_matches_swiss_ephemeris_cross_check() -> None:
+    # Cross-checked against Swiss Ephemeris's houses_ex() (used only as a
+    # local, throwaway verification oracle, never a product dependency --
+    # see DECISIONS.md) for 1990-05-15 03:00 UTC, New Delhi (28.6139N,
+    # 77.2090E): it gave a tropical ascendant of 97.6490 deg. This test
+    # guards against a repeat of the sign-flip bug (atan2 args reversed)
+    # that previously made this function silently return the descendant
+    # (180 deg off) instead of the ascendant.
+    ts = get_timescale()
+    t = ts.from_datetime(datetime(1990, 5, 15, 3, 0, tzinfo=UTC))
+    asc = ascendant_tropical_longitude_deg(t, latitude_deg=28.6139, longitude_east_deg=77.2090)
+    assert abs(asc - 97.6490) < 0.01

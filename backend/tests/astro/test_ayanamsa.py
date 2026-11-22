@@ -15,12 +15,20 @@ def test_ayanamsa_increases_over_time() -> None:
     assert _ayanamsa_at(1950) < _ayanamsa_at(2000) < _ayanamsa_at(2026)
 
 
-def test_ayanamsa_near_published_value_for_2000() -> None:
-    # Published Lahiri ayanamsa for 2000-01-01 is ~23.84-23.85 degrees.
-    # Within ~5 arcmin, pending calibration against the founder's reference
-    # charts (see ayanamsa.py and DECISIONS.md).
-    value = _ayanamsa_at(2000)
-    assert 23.7 < value < 24.0
+def test_ayanamsa_matches_swiss_ephemeris_lahiri() -> None:
+    # Cross-checked against Swiss Ephemeris's SIDM_LAHIRI mode (used only as
+    # a local, throwaway verification oracle, never a product dependency --
+    # see ayanamsa.py and DECISIONS.md) across 1900-2100; matched to better
+    # than 0.01 arcsec. These are fixed expected values from that check.
+    expected = {
+        1900: 22.460531,
+        1943: 23.060956,
+        2000: 23.857073,
+        2026: 24.220304,
+        2100: 25.254268,
+    }
+    for year, expected_deg in expected.items():
+        assert abs(_ayanamsa_at(year) - expected_deg) < 0.0001
 
 
 def test_ayanamsa_rate_matches_precession() -> None:
