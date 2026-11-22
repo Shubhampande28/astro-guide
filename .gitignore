@@ -1,6 +1,9 @@
 # Secrets
 .env
 
+# Astro ephemeris data (auto-downloaded on first run, ~32MB, not committed)
+backend/data/
+
 # Python
 __pycache__/
 *.pyc

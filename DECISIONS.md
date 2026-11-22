@@ -34,3 +34,51 @@ backend locally on 3.11+ without Docker if they want to.
 Android CI yet).
 **Reason:** Android project doesn't exist until Phase 5. Will add a separate
 CI job when Phase 5 starts.
+
+### 2026-11-23 — Lahiri ayanamsa computed from Spica, not a fixed table
+**Decision:** Ayanamsa = tropical longitude of the star Spica (via Skyfield,
+full precession/nutation/aberration) minus 180 degrees, with a
+`CALIBRATION_OFFSET_DEG` constant (currently 0) in `app/astro/ayanamsa.py`.
+**Reason:** This is the literal definition of "Chitrapaksha" that CLAUDE.md
+names — Spica (Chitra) anchored at 180 degrees. Published Lahiri tables can
+differ from a pure Spica calculation by up to roughly half an arcminute
+depending on exactly which historical star coordinates/precession model the
+original committee used. The accuracy gate (10 reference charts, still
+needed from the founder) is what tunes `CALIBRATION_OFFSET_DEG` if the
+reference software shows a consistent offset.
+
+### 2026-11-23 — Rahu/Ketu have no classical dignity
+**Decision:** `dignity()` returns `"neutral"` for Rahu and Ketu always.
+**Reason:** Classical texts disagree on which signs the lunar nodes are
+exalted/debilitated in (Gemini/Sagittarius vs. Taurus/Scorpio are both
+cited). Guessing one risks silently baking in a tradition the founder (an
+astrologer) didn't choose. Revisit once they pick one.
+
+### 2026-11-23 — `/chart` takes latitude/longitude directly, not a place name
+**Decision:** Phase 1's `/chart` endpoint requires the caller to already have
+latitude, longitude, and an IANA timezone name — it does not do place-name
+geocoding.
+**Reason:** CLAUDE.md 5.1 specifies an offline GeoNames cities500 lookup for
+place search, but that's really part of F1 (onboarding, place autocomplete)
+rather than the chart math itself. Phase 1's "done when" criterion is the
+accuracy gate on 10 reference charts, which doesn't need geocoding. Add
+geocoding when F1/the Android onboarding flow is built, or sooner if asked.
+
+### 2026-11-23 — `tzdata` added as an explicit dependency
+**Decision:** Added the `tzdata` PyPI package (Apache-2.0/MIT) rather than
+relying on the OS having IANA timezone data installed.
+**Reason:** Windows does not ship IANA tz data at all, and some minimal
+Linux/Docker base images don't either. Without it, every `zoneinfo.ZoneInfo`
+lookup (including the historical Asia/Kolkata offset handling this product
+depends on) fails outright. Confirmed locally: `ZoneInfo("Asia/Kolkata")`
+raised `ZoneInfoNotFoundError` on this Windows machine until `tzdata` was
+installed.
+
+### 2026-11-23 — Ephemeris file is downloaded, not committed
+**Decision:** The NASA JPL DE440s file (~32MB) downloads automatically into
+`backend/data/` (gitignored) on first use, via Skyfield's `Loader`, instead
+of being committed to the repo.
+**Reason:** 32MB is too large for a git repo to carry comfortably, and it's
+public NASA data anyway — no reason to version it. This does mean the very
+first `/chart` call (or test run) after a fresh clone needs internet access
+once; after that it's cached on disk.

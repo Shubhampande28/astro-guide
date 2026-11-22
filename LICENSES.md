@@ -15,6 +15,7 @@ new dependency is added.
 | redis-py | MIT | Redis client |
 | python-jose | MIT | JWT handling |
 | PyYAML | MIT | Rules file parsing |
+| tzdata | Apache 2.0 / MIT | IANA timezone database (needed on Windows and some minimal Linux images, which don't ship it by default) |
 | pytest | MIT | Testing |
 | ruff | MIT | Linting |
 | black | MIT | Formatting |
