@@ -118,6 +118,58 @@ Panchang/Jagannatha Hora uses is the one this product needs to match, and
 that can only be confirmed against real reference data, not another
 independent calculation.
 
+### 2026-11-23 — Condition DSL uses Python's `ast`, not a hand-written parser
+**Decision:** `app/rules/dsl.py` parses conditions with `ast.parse(mode="eval")`
+(builds a syntax tree only, never calls `eval`/`exec`), then validates the
+tree against a strict node/function/attribute whitelist before walking it
+with our own interpreter.
+**Reason:** CLAUDE.md 5.2 asks for a safe DSL with exactly the syntax Python
+expressions already have (`lord(10) in house(11)`, `and`/`or`/`not`,
+`==`/`!=`). Reusing Python's own parser for the *syntax* only, while fully
+owning what each node means and rejecting anything not on the whitelist
+(imports, lambdas, arbitrary calls, `__class__`, chained comparisons,
+etc.), is simpler and better-tested than writing a tokenizer/parser from
+scratch, and is still exploit-proof since no Python code is ever executed.
+
+### 2026-11-23 — Remedies catalog deferred
+**Decision:** Every seed rule has `remedies: []`.
+**Reason:** CLAUDE.md's rule format references remedy IDs (e.g.
+`REM-SUN-01`), but building that catalog is out of scope for "rules engine
++ 200 seed rules" (Phase 2's actual deliverable). Will add remedy IDs once
+a remedies catalog exists, likely alongside the chat pipeline (Phase 3) or
+when the founder specifies which remedies to offer (principle 3: no
+expensive remedy pushing).
+
+### 2026-11-23 — The 200 seed rules are template-generated, not hand-written
+**Decision:** `scripts/generate_seed_rules.py` produces all 200 rules from
+one 25-slot template per topic (house-lord placement across all 12 houses,
+the topic's classical karaka's dignity, a secondary karaka's dignity,
+retrograde, aspects from Jupiter/Saturn, conjunction with Jupiter/Saturn,
+and dasha activation), with the house/karaka choices per topic set by hand
+in that script.
+**Reason:** Hand-writing 200 individually distinct rules wasn't a good use
+of time versus encoding the underlying classical pattern once and
+generating consistent, DSL-valid, non-duplicated output. All 200 are
+seeded as `status: draft` specifically so the founder (an astrologer) can
+review, edit, or reject them via the admin panel in Phase 9 -- generated
+is not the same as pre-approved. A general house-strength table (trikona
+1/5/9 and kendra 4/7/10 strongest, upachaya 3/6/11 supportive, dusthana
+6/8/12 challenging) is reused across all 8 topics rather than writing a
+bespoke weighting per topic, which is a simplification worth revisiting
+once real rules get astrologer review.
+
+### 2026-11-23 — Graha drishti (aspect) and conjunction definitions
+**Decision:** `aspects(X, n)`: every graha aspects the 7th house from
+itself; Mars/Jupiter/Saturn additionally aspect 4th&8th / 5th&9th / 3rd&10th
+respectively (Parashari); Rahu/Ketu get only the standard 7th aspect.
+`conj(X, Y)`: true when X and Y occupy the same sign (rashi), not
+necessarily the same house-relative-to-lagna (they're the same thing for a
+natal chart, but this matters once transit charts are involved).
+**Reason:** Classical texts disagree on whether Rahu/Ketu get Mars/Saturn-
+style special aspects; the conservative reading (no) avoids silently
+picking a tradition the founder hasn't chosen. Same-sign conjunction is the
+standard definition across traditions.
+
 ### 2026-11-23 — Ephemeris file is downloaded, not committed
 **Decision:** The NASA JPL DE440s file (~32MB) downloads automatically into
 `backend/data/` (gitignored) on first use, via Skyfield's `Loader`, instead

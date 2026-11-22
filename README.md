@@ -73,6 +73,26 @@ proceeds on the strength of the self-verification above. The pre-1955
 ascendant precision question remains open — worth revisiting before this
 engine is used for real predictions involving pre-1955 births.
 
+## Trying the rules engine
+
+The rules engine takes a chart plus a topic ("career", "marriage", "money",
+"health", "education", "foreign_travel", "children", "property") and
+returns which rules matched, a score, a verdict, and when (which dasha
+periods) the topic is most active. There are 200 seed rules (25 per topic),
+all currently `status: draft` — no astrologer has reviewed them yet (that's
+Phase 9's admin panel), so this is a demonstration of the engine, not
+vetted predictions.
+
+To see it work end-to-end for 3 example births (modern, 1943 wartime IST,
+and southern-hemisphere):
+
+```
+docker compose exec backend python scripts/sample_rules_report.py
+```
+
+This prints, for each birth and each topic, the matched rules with their
+weights, the overall score/verdict, and the dasha timing window.
+
 ## Running the tests
 
 With the containers running (in another terminal):
@@ -115,13 +135,16 @@ jyotish-guru/
   docs/           API reference and rule-writing guide
 ```
 
-## Current status: Phase 1 in progress
+## Current status: Phase 2 in progress
 
-Phase 0 (repo structure, Docker Compose, CI) is done. Phase 1's engine code
-is written, unit-tested (41 tests passing, covering ayanamsa, planet
-positions, houses, nakshatra, dignity, navamsa, and Vimshottari dasha), and
-self-verified against an independent implementation. The `/chart` endpoint
-works end-to-end.
+Phase 0 (repo structure, Docker Compose, CI) is done. Phase 1's Kundli
+engine is built, unit-tested, and self-verified against an independent
+implementation (one open item remains: pre-1955 ascendant precision — see
+below). Phase 2's rules engine is built: a safe condition DSL (no `eval`),
+an evaluator producing score/verdict/timing windows, and 200 seed rules
+(25 per topic across all 8 MVP topics), all unit-tested (77 tests passing
+across both phases) and demonstrated end-to-end with the sample report
+above.
 
 ### What I still need from you to finish Phase 1
 
@@ -146,3 +169,14 @@ truth to compare against:
 I'll run the same 10 births through this engine and compare. If the ayanamsa
 or ascendant comes out systematically off by a fixed amount, I can tune a
 calibration constant already built in for exactly that (see DECISIONS.md).
+
+### What to review for Phase 2
+
+The 200 seed rules are generated from a template (see `scripts/
+generate_seed_rules.py` and the DECISIONS.md entry on this) — the
+*mechanism* (house placement, dignity, aspects, conjunctions, dasha) is
+classically grounded, but no astrologer has reviewed the actual rule text
+or weights yet. Run the sample report above and skim a topic or two; if
+anything reads wrong astrologically, that's exactly the kind of feedback
+the admin panel (Phase 9) is meant to collect — for now, just tell me and
+I'll adjust the generator or the rule content directly.

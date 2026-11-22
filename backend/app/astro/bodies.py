@@ -83,6 +83,6 @@ def compute_positions(t: Time, ts) -> dict[str, GrahaPosition]:
         else:
             lon_next = tropical_longitude_deg(graha, t_next)
             delta = (lon_next - lon + 540.0) % 360.0 - 180.0  # signed, wrap-safe
-            retro = delta < 0
+            retro = bool(delta < 0)  # longitudes can be numpy floats; keep this a plain bool
         positions[graha] = GrahaPosition(graha, lon, retro)
     return positions

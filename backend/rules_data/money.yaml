@@ -1,0 +1,359 @@
+- id: MON-001
+  topic: money
+  condition: lord(2) in house(1)
+  weight: 4
+  effect:
+    en: The lord of the 2nd house placed in the 1st house supports wealth.
+    hi: 2nd भाव का स्वामी 1st भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 1st house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-002
+  topic: money
+  condition: lord(2) in house(2)
+  weight: 1
+  effect:
+    en: The lord of the 2nd house placed in the 2nd house supports wealth.
+    hi: 2nd भाव का स्वामी 2nd भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 2nd house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-003
+  topic: money
+  condition: lord(2) in house(3)
+  weight: 2
+  effect:
+    en: The lord of the 2nd house placed in the 3rd house supports wealth.
+    hi: 2nd भाव का स्वामी 3rd भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 3rd house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-004
+  topic: money
+  condition: lord(2) in house(4)
+  weight: 3
+  effect:
+    en: The lord of the 2nd house placed in the 4th house supports wealth.
+    hi: 2nd भाव का स्वामी 4th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 4th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-005
+  topic: money
+  condition: lord(2) in house(5)
+  weight: 4
+  effect:
+    en: The lord of the 2nd house placed in the 5th house supports wealth.
+    hi: 2nd भाव का स्वामी 5th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 5th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-006
+  topic: money
+  condition: lord(2) in house(6)
+  weight: -3
+  effect:
+    en: The lord of the 2nd house placed in the 6th house creates obstacles for wealth.
+    hi: 2nd भाव का स्वामी 6th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 6th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-007
+  topic: money
+  condition: lord(2) in house(7)
+  weight: 3
+  effect:
+    en: The lord of the 2nd house placed in the 7th house supports wealth.
+    hi: 2nd भाव का स्वामी 7th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 7th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-008
+  topic: money
+  condition: lord(2) in house(8)
+  weight: -4
+  effect:
+    en: The lord of the 2nd house placed in the 8th house creates obstacles for wealth.
+    hi: 2nd भाव का स्वामी 8th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 8th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-009
+  topic: money
+  condition: lord(2) in house(9)
+  weight: 4
+  effect:
+    en: The lord of the 2nd house placed in the 9th house supports wealth.
+    hi: 2nd भाव का स्वामी 9th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 9th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-010
+  topic: money
+  condition: lord(2) in house(10)
+  weight: 3
+  effect:
+    en: The lord of the 2nd house placed in the 10th house supports wealth.
+    hi: 2nd भाव का स्वामी 10th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 10th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-011
+  topic: money
+  condition: lord(2) in house(11)
+  weight: 2
+  effect:
+    en: The lord of the 2nd house placed in the 11th house supports wealth.
+    hi: 2nd भाव का स्वामी 11th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 11th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-012
+  topic: money
+  condition: lord(2) in house(12)
+  weight: -2
+  effect:
+    en: The lord of the 2nd house placed in the 12th house creates obstacles for wealth.
+    hi: 2nd भाव का स्वामी 12th भाव में होने से धन पर प्रभाव पड़ता है।
+    hinglish: 2nd house ka swami 12th house mein hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-013
+  topic: money
+  condition: planet(Jupiter).dignity == 'exalted'
+  weight: 4
+  effect:
+    en: Jupiter, the significator of wealth, is exalted and strongly favours matters
+      of wealth.
+    hi: गुरु धन का कारक है और exalted होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, paisa ka karaka, exalted hai aur isse paisa par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-014
+  topic: money
+  condition: planet(Jupiter).dignity == 'own'
+  weight: 2
+  effect:
+    en: Jupiter, the significator of wealth, is own and supports matters of wealth.
+    hi: गुरु धन का कारक है और own होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, paisa ka karaka, own hai aur isse paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-015
+  topic: money
+  condition: planet(Jupiter).dignity == 'moolatrikona'
+  weight: 3
+  effect:
+    en: Jupiter, the significator of wealth, is moolatrikona and favours matters of
+      wealth.
+    hi: गुरु धन का कारक है और moolatrikona होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, paisa ka karaka, moolatrikona hai aur isse paisa par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-016
+  topic: money
+  condition: planet(Jupiter).dignity == 'debilitated'
+  weight: -4
+  effect:
+    en: Jupiter, the significator of wealth, is debilitated and weakens matters of
+      wealth.
+    hi: गुरु धन का कारक है और debilitated होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, paisa ka karaka, debilitated hai aur isse paisa par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-017
+  topic: money
+  condition: planet(Venus).dignity == 'exalted'
+  weight: 3
+  effect:
+    en: Venus, a secondary significator of wealth, is exalted, affecting wealth.
+    hi: शुक्र भी धन का एक कारक है और exalted होने से असर होता है।
+    hinglish: Venus, paisa ka secondary karaka, exalted hai, isse bhi asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-018
+  topic: money
+  condition: planet(Venus).dignity == 'debilitated'
+  weight: -3
+  effect:
+    en: Venus, a secondary significator of wealth, is debilitated, affecting wealth.
+    hi: शुक्र भी धन का एक कारक है और debilitated होने से असर होता है।
+    hinglish: Venus, paisa ka secondary karaka, debilitated hai, isse bhi asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-019
+  topic: money
+  condition: planet(Jupiter).retro == True
+  weight: -1
+  effect:
+    en: Jupiter retrograde can delay outcomes related to wealth, though the eventual
+      result is not ruled out.
+    hi: गुरु वक्री होने से धन से जुड़े परिणामों में देरी हो सकती है।
+    hinglish: Jupiter vakri hone se paisa se related results mein deri ho sakti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-020
+  topic: money
+  condition: aspects(Jupiter, 2)
+  weight: 3
+  effect:
+    en: Jupiter aspecting the 2nd house brings a protective, favourable influence
+      on wealth.
+    hi: Jupiter की 2nd भाव पर दृष्टि धन को प्रभावित करती है।
+    hinglish: Jupiter ki 2nd house par drishti paisa ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-021
+  topic: money
+  condition: aspects(Saturn, 2)
+  weight: -2
+  effect:
+    en: Saturn aspecting the 2nd house brings a restrictive influence on wealth.
+    hi: Saturn की 2nd भाव पर दृष्टि धन को प्रभावित करती है।
+    hinglish: Saturn ki 2nd house par drishti paisa ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-022
+  topic: money
+  condition: conj(lord(2), Jupiter)
+  weight: 3
+  effect:
+    en: The 2nd lord conjunct Jupiter brings a benefic influence on wealth.
+    hi: 2nd भाव का स्वामी Jupiter के साथ होने से धन पर असर पड़ता है।
+    hinglish: 2nd house ka swami Jupiter ke saath hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-023
+  topic: money
+  condition: conj(lord(2), Saturn)
+  weight: -2
+  effect:
+    en: The 2nd lord conjunct Saturn brings a challenging influence on wealth.
+    hi: 2nd भाव का स्वामी Saturn के साथ होने से धन पर असर पड़ता है।
+    hinglish: 2nd house ka swami Saturn ke saath hone se paisa par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-024
+  topic: money
+  condition: dasha.maha == 'Jupiter'
+  weight: 2
+  effect:
+    en: The current Jupiter dasha activates matters of wealth.
+    hi: चल रही गुरु दशा धन से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Jupiter dasha paisa se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MON-025
+  topic: money
+  condition: dasha.antar == 'Jupiter'
+  weight: 1
+  effect:
+    en: The current Jupiter dasha activates matters of wealth.
+    hi: चल रही गुरु दशा धन से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Jupiter dasha paisa se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft

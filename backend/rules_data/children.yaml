@@ -1,0 +1,363 @@
+- id: CHI-001
+  topic: children
+  condition: lord(5) in house(1)
+  weight: 4
+  effect:
+    en: The lord of the 5th house placed in the 1st house supports children.
+    hi: 5th भाव का स्वामी 1st भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 1st house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-002
+  topic: children
+  condition: lord(5) in house(2)
+  weight: 1
+  effect:
+    en: The lord of the 5th house placed in the 2nd house supports children.
+    hi: 5th भाव का स्वामी 2nd भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 2nd house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-003
+  topic: children
+  condition: lord(5) in house(3)
+  weight: 2
+  effect:
+    en: The lord of the 5th house placed in the 3rd house supports children.
+    hi: 5th भाव का स्वामी 3rd भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 3rd house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-004
+  topic: children
+  condition: lord(5) in house(4)
+  weight: 3
+  effect:
+    en: The lord of the 5th house placed in the 4th house supports children.
+    hi: 5th भाव का स्वामी 4th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 4th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-005
+  topic: children
+  condition: lord(5) in house(5)
+  weight: 4
+  effect:
+    en: The lord of the 5th house placed in the 5th house supports children.
+    hi: 5th भाव का स्वामी 5th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 5th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-006
+  topic: children
+  condition: lord(5) in house(6)
+  weight: -3
+  effect:
+    en: The lord of the 5th house placed in the 6th house creates obstacles for children.
+    hi: 5th भाव का स्वामी 6th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 6th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-007
+  topic: children
+  condition: lord(5) in house(7)
+  weight: 3
+  effect:
+    en: The lord of the 5th house placed in the 7th house supports children.
+    hi: 5th भाव का स्वामी 7th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 7th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-008
+  topic: children
+  condition: lord(5) in house(8)
+  weight: -4
+  effect:
+    en: The lord of the 5th house placed in the 8th house creates obstacles for children.
+    hi: 5th भाव का स्वामी 8th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 8th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-009
+  topic: children
+  condition: lord(5) in house(9)
+  weight: 4
+  effect:
+    en: The lord of the 5th house placed in the 9th house supports children.
+    hi: 5th भाव का स्वामी 9th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 9th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-010
+  topic: children
+  condition: lord(5) in house(10)
+  weight: 3
+  effect:
+    en: The lord of the 5th house placed in the 10th house supports children.
+    hi: 5th भाव का स्वामी 10th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 10th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-011
+  topic: children
+  condition: lord(5) in house(11)
+  weight: 2
+  effect:
+    en: The lord of the 5th house placed in the 11th house supports children.
+    hi: 5th भाव का स्वामी 11th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 11th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-012
+  topic: children
+  condition: lord(5) in house(12)
+  weight: -2
+  effect:
+    en: The lord of the 5th house placed in the 12th house creates obstacles for children.
+    hi: 5th भाव का स्वामी 12th भाव में होने से संतान पर प्रभाव पड़ता है।
+    hinglish: 5th house ka swami 12th house mein hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-013
+  topic: children
+  condition: planet(Jupiter).dignity == 'exalted'
+  weight: 4
+  effect:
+    en: Jupiter, the significator of children, is exalted and strongly favours matters
+      of children.
+    hi: गुरु संतान का कारक है और exalted होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, bachche ka karaka, exalted hai aur isse bachche par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-014
+  topic: children
+  condition: planet(Jupiter).dignity == 'own'
+  weight: 2
+  effect:
+    en: Jupiter, the significator of children, is own and supports matters of children.
+    hi: गुरु संतान का कारक है और own होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, bachche ka karaka, own hai aur isse bachche par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-015
+  topic: children
+  condition: planet(Jupiter).dignity == 'moolatrikona'
+  weight: 3
+  effect:
+    en: Jupiter, the significator of children, is moolatrikona and favours matters
+      of children.
+    hi: गुरु संतान का कारक है और moolatrikona होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, bachche ka karaka, moolatrikona hai aur isse bachche par asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-016
+  topic: children
+  condition: planet(Jupiter).dignity == 'debilitated'
+  weight: -4
+  effect:
+    en: Jupiter, the significator of children, is debilitated and weakens matters
+      of children.
+    hi: गुरु संतान का कारक है और debilitated होने से इस पर असर पड़ता है।
+    hinglish: Jupiter, bachche ka karaka, debilitated hai aur isse bachche par asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-017
+  topic: children
+  condition: planet(Sun).dignity == 'exalted'
+  weight: 3
+  effect:
+    en: Sun, a secondary significator of children, is exalted, affecting children.
+    hi: सूर्य भी संतान का एक कारक है और exalted होने से असर होता है।
+    hinglish: Sun, bachche ka secondary karaka, exalted hai, isse bhi asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-018
+  topic: children
+  condition: planet(Sun).dignity == 'debilitated'
+  weight: -3
+  effect:
+    en: Sun, a secondary significator of children, is debilitated, affecting children.
+    hi: सूर्य भी संतान का एक कारक है और debilitated होने से असर होता है।
+    hinglish: Sun, bachche ka secondary karaka, debilitated hai, isse bhi asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-019
+  topic: children
+  condition: planet(Jupiter).retro == True
+  weight: -1
+  effect:
+    en: Jupiter retrograde can delay outcomes related to children, though the eventual
+      result is not ruled out.
+    hi: गुरु वक्री होने से संतान से जुड़े परिणामों में देरी हो सकती है।
+    hinglish: Jupiter vakri hone se bachche se related results mein deri ho sakti
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-020
+  topic: children
+  condition: aspects(Jupiter, 5)
+  weight: 3
+  effect:
+    en: Jupiter aspecting the 5th house brings a protective, favourable influence
+      on children.
+    hi: Jupiter की 5th भाव पर दृष्टि संतान को प्रभावित करती है।
+    hinglish: Jupiter ki 5th house par drishti bachche ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-021
+  topic: children
+  condition: aspects(Saturn, 5)
+  weight: -2
+  effect:
+    en: Saturn aspecting the 5th house brings a restrictive influence on children.
+    hi: Saturn की 5th भाव पर दृष्टि संतान को प्रभावित करती है।
+    hinglish: Saturn ki 5th house par drishti bachche ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-022
+  topic: children
+  condition: conj(lord(5), Jupiter)
+  weight: 3
+  effect:
+    en: The 5th lord conjunct Jupiter brings a benefic influence on children.
+    hi: 5th भाव का स्वामी Jupiter के साथ होने से संतान पर असर पड़ता है।
+    hinglish: 5th house ka swami Jupiter ke saath hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-023
+  topic: children
+  condition: conj(lord(5), Saturn)
+  weight: -2
+  effect:
+    en: The 5th lord conjunct Saturn brings a challenging influence on children.
+    hi: 5th भाव का स्वामी Saturn के साथ होने से संतान पर असर पड़ता है।
+    hinglish: 5th house ka swami Saturn ke saath hone se bachche par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-024
+  topic: children
+  condition: dasha.maha == 'Jupiter'
+  weight: 2
+  effect:
+    en: The current Jupiter dasha activates matters of children.
+    hi: चल रही गुरु दशा संतान से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Jupiter dasha bachche se related topics ko activate karti
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CHI-025
+  topic: children
+  condition: dasha.antar == 'Jupiter'
+  weight: 1
+  effect:
+    en: The current Jupiter dasha activates matters of children.
+    hi: चल रही गुरु दशा संतान से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Jupiter dasha bachche se related topics ko activate karti
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft

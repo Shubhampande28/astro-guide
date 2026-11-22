@@ -1,0 +1,356 @@
+- id: HEA-001
+  topic: health
+  condition: lord(6) in house(1)
+  weight: 4
+  effect:
+    en: The lord of the 6th house placed in the 1st house supports health.
+    hi: 6th भाव का स्वामी 1st भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 1st house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-002
+  topic: health
+  condition: lord(6) in house(2)
+  weight: 1
+  effect:
+    en: The lord of the 6th house placed in the 2nd house supports health.
+    hi: 6th भाव का स्वामी 2nd भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 2nd house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-003
+  topic: health
+  condition: lord(6) in house(3)
+  weight: 2
+  effect:
+    en: The lord of the 6th house placed in the 3rd house supports health.
+    hi: 6th भाव का स्वामी 3rd भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 3rd house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-004
+  topic: health
+  condition: lord(6) in house(4)
+  weight: 3
+  effect:
+    en: The lord of the 6th house placed in the 4th house supports health.
+    hi: 6th भाव का स्वामी 4th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 4th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-005
+  topic: health
+  condition: lord(6) in house(5)
+  weight: 4
+  effect:
+    en: The lord of the 6th house placed in the 5th house supports health.
+    hi: 6th भाव का स्वामी 5th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 5th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-006
+  topic: health
+  condition: lord(6) in house(6)
+  weight: -3
+  effect:
+    en: The lord of the 6th house placed in the 6th house creates obstacles for health.
+    hi: 6th भाव का स्वामी 6th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 6th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-007
+  topic: health
+  condition: lord(6) in house(7)
+  weight: 3
+  effect:
+    en: The lord of the 6th house placed in the 7th house supports health.
+    hi: 6th भाव का स्वामी 7th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 7th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-008
+  topic: health
+  condition: lord(6) in house(8)
+  weight: -4
+  effect:
+    en: The lord of the 6th house placed in the 8th house creates obstacles for health.
+    hi: 6th भाव का स्वामी 8th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 8th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-009
+  topic: health
+  condition: lord(6) in house(9)
+  weight: 4
+  effect:
+    en: The lord of the 6th house placed in the 9th house supports health.
+    hi: 6th भाव का स्वामी 9th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 9th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-010
+  topic: health
+  condition: lord(6) in house(10)
+  weight: 3
+  effect:
+    en: The lord of the 6th house placed in the 10th house supports health.
+    hi: 6th भाव का स्वामी 10th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 10th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-011
+  topic: health
+  condition: lord(6) in house(11)
+  weight: 2
+  effect:
+    en: The lord of the 6th house placed in the 11th house supports health.
+    hi: 6th भाव का स्वामी 11th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 11th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-012
+  topic: health
+  condition: lord(6) in house(12)
+  weight: -2
+  effect:
+    en: The lord of the 6th house placed in the 12th house creates obstacles for health.
+    hi: 6th भाव का स्वामी 12th भाव में होने से स्वास्थ्य पर प्रभाव पड़ता है।
+    hinglish: 6th house ka swami 12th house mein hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-013
+  topic: health
+  condition: planet(Moon).dignity == 'exalted'
+  weight: 4
+  effect:
+    en: Moon, the significator of health, is exalted and strongly favours matters
+      of health.
+    hi: चंद्र स्वास्थ्य का कारक है और exalted होने से इस पर असर पड़ता है।
+    hinglish: Moon, health ka karaka, exalted hai aur isse health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-014
+  topic: health
+  condition: planet(Moon).dignity == 'own'
+  weight: 2
+  effect:
+    en: Moon, the significator of health, is own and supports matters of health.
+    hi: चंद्र स्वास्थ्य का कारक है और own होने से इस पर असर पड़ता है।
+    hinglish: Moon, health ka karaka, own hai aur isse health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-015
+  topic: health
+  condition: planet(Moon).dignity == 'moolatrikona'
+  weight: 3
+  effect:
+    en: Moon, the significator of health, is moolatrikona and favours matters of health.
+    hi: चंद्र स्वास्थ्य का कारक है और moolatrikona होने से इस पर असर पड़ता है।
+    hinglish: Moon, health ka karaka, moolatrikona hai aur isse health par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-016
+  topic: health
+  condition: planet(Moon).dignity == 'debilitated'
+  weight: -4
+  effect:
+    en: Moon, the significator of health, is debilitated and weakens matters of health.
+    hi: चंद्र स्वास्थ्य का कारक है और debilitated होने से इस पर असर पड़ता है।
+    hinglish: Moon, health ka karaka, debilitated hai aur isse health par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-017
+  topic: health
+  condition: planet(Mars).dignity == 'exalted'
+  weight: 3
+  effect:
+    en: Mars, a secondary significator of health, is exalted, affecting health.
+    hi: मंगल भी स्वास्थ्य का एक कारक है और exalted होने से असर होता है।
+    hinglish: Mars, health ka secondary karaka, exalted hai, isse bhi asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-018
+  topic: health
+  condition: planet(Mars).dignity == 'debilitated'
+  weight: -3
+  effect:
+    en: Mars, a secondary significator of health, is debilitated, affecting health.
+    hi: मंगल भी स्वास्थ्य का एक कारक है और debilitated होने से असर होता है।
+    hinglish: Mars, health ka secondary karaka, debilitated hai, isse bhi asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-019
+  topic: health
+  condition: planet(Moon).retro == True
+  weight: -1
+  effect:
+    en: Moon retrograde can delay outcomes related to health, though the eventual
+      result is not ruled out.
+    hi: चंद्र वक्री होने से स्वास्थ्य से जुड़े परिणामों में देरी हो सकती है।
+    hinglish: Moon vakri hone se health se related results mein deri ho sakti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-020
+  topic: health
+  condition: aspects(Jupiter, 6)
+  weight: 3
+  effect:
+    en: Jupiter aspecting the 6th house brings a protective, favourable influence
+      on health.
+    hi: Jupiter की 6th भाव पर दृष्टि स्वास्थ्य को प्रभावित करती है।
+    hinglish: Jupiter ki 6th house par drishti health ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-021
+  topic: health
+  condition: aspects(Saturn, 6)
+  weight: -2
+  effect:
+    en: Saturn aspecting the 6th house brings a restrictive influence on health.
+    hi: Saturn की 6th भाव पर दृष्टि स्वास्थ्य को प्रभावित करती है।
+    hinglish: Saturn ki 6th house par drishti health ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-022
+  topic: health
+  condition: conj(lord(6), Jupiter)
+  weight: 3
+  effect:
+    en: The 6th lord conjunct Jupiter brings a benefic influence on health.
+    hi: 6th भाव का स्वामी Jupiter के साथ होने से स्वास्थ्य पर असर पड़ता है।
+    hinglish: 6th house ka swami Jupiter ke saath hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-023
+  topic: health
+  condition: conj(lord(6), Saturn)
+  weight: -2
+  effect:
+    en: The 6th lord conjunct Saturn brings a challenging influence on health.
+    hi: 6th भाव का स्वामी Saturn के साथ होने से स्वास्थ्य पर असर पड़ता है।
+    hinglish: 6th house ka swami Saturn ke saath hone se health par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-024
+  topic: health
+  condition: dasha.maha == 'Moon'
+  weight: 2
+  effect:
+    en: The current Moon dasha activates matters of health.
+    hi: चल रही चंद्र दशा स्वास्थ्य से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Moon dasha health se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: HEA-025
+  topic: health
+  condition: dasha.antar == 'Moon'
+  weight: 1
+  effect:
+    en: The current Moon dasha activates matters of health.
+    hi: चल रही चंद्र दशा स्वास्थ्य से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Moon dasha health se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft

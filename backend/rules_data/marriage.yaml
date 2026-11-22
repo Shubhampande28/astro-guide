@@ -1,0 +1,360 @@
+- id: MAR-001
+  topic: marriage
+  condition: lord(7) in house(1)
+  weight: 4
+  effect:
+    en: The lord of the 7th house placed in the 1st house supports marriage.
+    hi: 7th भाव का स्वामी 1st भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 1st house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-002
+  topic: marriage
+  condition: lord(7) in house(2)
+  weight: 1
+  effect:
+    en: The lord of the 7th house placed in the 2nd house supports marriage.
+    hi: 7th भाव का स्वामी 2nd भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 2nd house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-003
+  topic: marriage
+  condition: lord(7) in house(3)
+  weight: 2
+  effect:
+    en: The lord of the 7th house placed in the 3rd house supports marriage.
+    hi: 7th भाव का स्वामी 3rd भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 3rd house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-004
+  topic: marriage
+  condition: lord(7) in house(4)
+  weight: 3
+  effect:
+    en: The lord of the 7th house placed in the 4th house supports marriage.
+    hi: 7th भाव का स्वामी 4th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 4th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-005
+  topic: marriage
+  condition: lord(7) in house(5)
+  weight: 4
+  effect:
+    en: The lord of the 7th house placed in the 5th house supports marriage.
+    hi: 7th भाव का स्वामी 5th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 5th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-006
+  topic: marriage
+  condition: lord(7) in house(6)
+  weight: -3
+  effect:
+    en: The lord of the 7th house placed in the 6th house creates obstacles for marriage.
+    hi: 7th भाव का स्वामी 6th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 6th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-007
+  topic: marriage
+  condition: lord(7) in house(7)
+  weight: 3
+  effect:
+    en: The lord of the 7th house placed in the 7th house supports marriage.
+    hi: 7th भाव का स्वामी 7th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 7th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-008
+  topic: marriage
+  condition: lord(7) in house(8)
+  weight: -4
+  effect:
+    en: The lord of the 7th house placed in the 8th house creates obstacles for marriage.
+    hi: 7th भाव का स्वामी 8th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 8th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-009
+  topic: marriage
+  condition: lord(7) in house(9)
+  weight: 4
+  effect:
+    en: The lord of the 7th house placed in the 9th house supports marriage.
+    hi: 7th भाव का स्वामी 9th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 9th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-010
+  topic: marriage
+  condition: lord(7) in house(10)
+  weight: 3
+  effect:
+    en: The lord of the 7th house placed in the 10th house supports marriage.
+    hi: 7th भाव का स्वामी 10th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 10th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-011
+  topic: marriage
+  condition: lord(7) in house(11)
+  weight: 2
+  effect:
+    en: The lord of the 7th house placed in the 11th house supports marriage.
+    hi: 7th भाव का स्वामी 11th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 11th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-012
+  topic: marriage
+  condition: lord(7) in house(12)
+  weight: -2
+  effect:
+    en: The lord of the 7th house placed in the 12th house creates obstacles for marriage.
+    hi: 7th भाव का स्वामी 12th भाव में होने से विवाह पर प्रभाव पड़ता है।
+    hinglish: 7th house ka swami 12th house mein hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-013
+  topic: marriage
+  condition: planet(Venus).dignity == 'exalted'
+  weight: 4
+  effect:
+    en: Venus, the significator of marriage, is exalted and strongly favours matters
+      of marriage.
+    hi: शुक्र विवाह का कारक है और exalted होने से इस पर असर पड़ता है।
+    hinglish: Venus, shaadi ka karaka, exalted hai aur isse shaadi par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-014
+  topic: marriage
+  condition: planet(Venus).dignity == 'own'
+  weight: 2
+  effect:
+    en: Venus, the significator of marriage, is own and supports matters of marriage.
+    hi: शुक्र विवाह का कारक है और own होने से इस पर असर पड़ता है।
+    hinglish: Venus, shaadi ka karaka, own hai aur isse shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-015
+  topic: marriage
+  condition: planet(Venus).dignity == 'moolatrikona'
+  weight: 3
+  effect:
+    en: Venus, the significator of marriage, is moolatrikona and favours matters of
+      marriage.
+    hi: शुक्र विवाह का कारक है और moolatrikona होने से इस पर असर पड़ता है।
+    hinglish: Venus, shaadi ka karaka, moolatrikona hai aur isse shaadi par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-016
+  topic: marriage
+  condition: planet(Venus).dignity == 'debilitated'
+  weight: -4
+  effect:
+    en: Venus, the significator of marriage, is debilitated and weakens matters of
+      marriage.
+    hi: शुक्र विवाह का कारक है और debilitated होने से इस पर असर पड़ता है।
+    hinglish: Venus, shaadi ka karaka, debilitated hai aur isse shaadi par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-017
+  topic: marriage
+  condition: planet(Jupiter).dignity == 'exalted'
+  weight: 3
+  effect:
+    en: Jupiter, a secondary significator of marriage, is exalted, affecting marriage.
+    hi: गुरु भी विवाह का एक कारक है और exalted होने से असर होता है।
+    hinglish: Jupiter, shaadi ka secondary karaka, exalted hai, isse bhi asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-018
+  topic: marriage
+  condition: planet(Jupiter).dignity == 'debilitated'
+  weight: -3
+  effect:
+    en: Jupiter, a secondary significator of marriage, is debilitated, affecting marriage.
+    hi: गुरु भी विवाह का एक कारक है और debilitated होने से असर होता है।
+    hinglish: Jupiter, shaadi ka secondary karaka, debilitated hai, isse bhi asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-019
+  topic: marriage
+  condition: planet(Venus).retro == True
+  weight: -1
+  effect:
+    en: Venus retrograde can delay outcomes related to marriage, though the eventual
+      result is not ruled out.
+    hi: शुक्र वक्री होने से विवाह से जुड़े परिणामों में देरी हो सकती है।
+    hinglish: Venus vakri hone se shaadi se related results mein deri ho sakti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-020
+  topic: marriage
+  condition: aspects(Jupiter, 7)
+  weight: 3
+  effect:
+    en: Jupiter aspecting the 7th house brings a protective, favourable influence
+      on marriage.
+    hi: Jupiter की 7th भाव पर दृष्टि विवाह को प्रभावित करती है।
+    hinglish: Jupiter ki 7th house par drishti shaadi ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-021
+  topic: marriage
+  condition: aspects(Saturn, 7)
+  weight: -2
+  effect:
+    en: Saturn aspecting the 7th house brings a restrictive influence on marriage.
+    hi: Saturn की 7th भाव पर दृष्टि विवाह को प्रभावित करती है।
+    hinglish: Saturn ki 7th house par drishti shaadi ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-022
+  topic: marriage
+  condition: conj(lord(7), Jupiter)
+  weight: 3
+  effect:
+    en: The 7th lord conjunct Jupiter brings a benefic influence on marriage.
+    hi: 7th भाव का स्वामी Jupiter के साथ होने से विवाह पर असर पड़ता है।
+    hinglish: 7th house ka swami Jupiter ke saath hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-023
+  topic: marriage
+  condition: conj(lord(7), Saturn)
+  weight: -2
+  effect:
+    en: The 7th lord conjunct Saturn brings a challenging influence on marriage.
+    hi: 7th भाव का स्वामी Saturn के साथ होने से विवाह पर असर पड़ता है।
+    hinglish: 7th house ka swami Saturn ke saath hone se shaadi par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-024
+  topic: marriage
+  condition: dasha.maha == 'Venus'
+  weight: 2
+  effect:
+    en: The current Venus dasha activates matters of marriage.
+    hi: चल रही शुक्र दशा विवाह से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Venus dasha shaadi se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: MAR-025
+  topic: marriage
+  condition: dasha.antar == 'Venus'
+  weight: 1
+  effect:
+    en: The current Venus dasha activates matters of marriage.
+    hi: चल रही शुक्र दशा विवाह से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Venus dasha shaadi se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft

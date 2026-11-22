@@ -1,0 +1,361 @@
+- id: PRO-001
+  topic: property
+  condition: lord(4) in house(1)
+  weight: 4
+  effect:
+    en: The lord of the 4th house placed in the 1st house supports property.
+    hi: 4th भाव का स्वामी 1st भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 1st house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-002
+  topic: property
+  condition: lord(4) in house(2)
+  weight: 1
+  effect:
+    en: The lord of the 4th house placed in the 2nd house supports property.
+    hi: 4th भाव का स्वामी 2nd भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 2nd house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-003
+  topic: property
+  condition: lord(4) in house(3)
+  weight: 2
+  effect:
+    en: The lord of the 4th house placed in the 3rd house supports property.
+    hi: 4th भाव का स्वामी 3rd भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 3rd house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-004
+  topic: property
+  condition: lord(4) in house(4)
+  weight: 3
+  effect:
+    en: The lord of the 4th house placed in the 4th house supports property.
+    hi: 4th भाव का स्वामी 4th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 4th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-005
+  topic: property
+  condition: lord(4) in house(5)
+  weight: 4
+  effect:
+    en: The lord of the 4th house placed in the 5th house supports property.
+    hi: 4th भाव का स्वामी 5th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 5th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-006
+  topic: property
+  condition: lord(4) in house(6)
+  weight: -3
+  effect:
+    en: The lord of the 4th house placed in the 6th house creates obstacles for property.
+    hi: 4th भाव का स्वामी 6th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 6th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-007
+  topic: property
+  condition: lord(4) in house(7)
+  weight: 3
+  effect:
+    en: The lord of the 4th house placed in the 7th house supports property.
+    hi: 4th भाव का स्वामी 7th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 7th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-008
+  topic: property
+  condition: lord(4) in house(8)
+  weight: -4
+  effect:
+    en: The lord of the 4th house placed in the 8th house creates obstacles for property.
+    hi: 4th भाव का स्वामी 8th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 8th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-009
+  topic: property
+  condition: lord(4) in house(9)
+  weight: 4
+  effect:
+    en: The lord of the 4th house placed in the 9th house supports property.
+    hi: 4th भाव का स्वामी 9th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 9th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-010
+  topic: property
+  condition: lord(4) in house(10)
+  weight: 3
+  effect:
+    en: The lord of the 4th house placed in the 10th house supports property.
+    hi: 4th भाव का स्वामी 10th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 10th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-011
+  topic: property
+  condition: lord(4) in house(11)
+  weight: 2
+  effect:
+    en: The lord of the 4th house placed in the 11th house supports property.
+    hi: 4th भाव का स्वामी 11th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 11th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-012
+  topic: property
+  condition: lord(4) in house(12)
+  weight: -2
+  effect:
+    en: The lord of the 4th house placed in the 12th house creates obstacles for property.
+    hi: 4th भाव का स्वामी 12th भाव में होने से संपत्ति पर प्रभाव पड़ता है।
+    hinglish: 4th house ka swami 12th house mein hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-013
+  topic: property
+  condition: planet(Mars).dignity == 'exalted'
+  weight: 4
+  effect:
+    en: Mars, the significator of property, is exalted and strongly favours matters
+      of property.
+    hi: मंगल संपत्ति का कारक है और exalted होने से इस पर असर पड़ता है।
+    hinglish: Mars, property ka karaka, exalted hai aur isse property par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-014
+  topic: property
+  condition: planet(Mars).dignity == 'own'
+  weight: 2
+  effect:
+    en: Mars, the significator of property, is own and supports matters of property.
+    hi: मंगल संपत्ति का कारक है और own होने से इस पर असर पड़ता है।
+    hinglish: Mars, property ka karaka, own hai aur isse property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-015
+  topic: property
+  condition: planet(Mars).dignity == 'moolatrikona'
+  weight: 3
+  effect:
+    en: Mars, the significator of property, is moolatrikona and favours matters of
+      property.
+    hi: मंगल संपत्ति का कारक है और moolatrikona होने से इस पर असर पड़ता है।
+    hinglish: Mars, property ka karaka, moolatrikona hai aur isse property par asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-016
+  topic: property
+  condition: planet(Mars).dignity == 'debilitated'
+  weight: -4
+  effect:
+    en: Mars, the significator of property, is debilitated and weakens matters of
+      property.
+    hi: मंगल संपत्ति का कारक है और debilitated होने से इस पर असर पड़ता है।
+    hinglish: Mars, property ka karaka, debilitated hai aur isse property par asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-017
+  topic: property
+  condition: planet(Saturn).dignity == 'exalted'
+  weight: 3
+  effect:
+    en: Saturn, a secondary significator of property, is exalted, affecting property.
+    hi: शनि भी संपत्ति का एक कारक है और exalted होने से असर होता है।
+    hinglish: Saturn, property ka secondary karaka, exalted hai, isse bhi asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-018
+  topic: property
+  condition: planet(Saturn).dignity == 'debilitated'
+  weight: -3
+  effect:
+    en: Saturn, a secondary significator of property, is debilitated, affecting property.
+    hi: शनि भी संपत्ति का एक कारक है और debilitated होने से असर होता है।
+    hinglish: Saturn, property ka secondary karaka, debilitated hai, isse bhi asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-019
+  topic: property
+  condition: planet(Mars).retro == True
+  weight: -1
+  effect:
+    en: Mars retrograde can delay outcomes related to property, though the eventual
+      result is not ruled out.
+    hi: मंगल वक्री होने से संपत्ति से जुड़े परिणामों में देरी हो सकती है।
+    hinglish: Mars vakri hone se property se related results mein deri ho sakti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-020
+  topic: property
+  condition: aspects(Jupiter, 4)
+  weight: 3
+  effect:
+    en: Jupiter aspecting the 4th house brings a protective, favourable influence
+      on property.
+    hi: Jupiter की 4th भाव पर दृष्टि संपत्ति को प्रभावित करती है।
+    hinglish: Jupiter ki 4th house par drishti property ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-021
+  topic: property
+  condition: aspects(Saturn, 4)
+  weight: -2
+  effect:
+    en: Saturn aspecting the 4th house brings a restrictive influence on property.
+    hi: Saturn की 4th भाव पर दृष्टि संपत्ति को प्रभावित करती है।
+    hinglish: Saturn ki 4th house par drishti property ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-022
+  topic: property
+  condition: conj(lord(4), Jupiter)
+  weight: 3
+  effect:
+    en: The 4th lord conjunct Jupiter brings a benefic influence on property.
+    hi: 4th भाव का स्वामी Jupiter के साथ होने से संपत्ति पर असर पड़ता है।
+    hinglish: 4th house ka swami Jupiter ke saath hone se property par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-023
+  topic: property
+  condition: conj(lord(4), Saturn)
+  weight: -2
+  effect:
+    en: The 4th lord conjunct Saturn brings a challenging influence on property.
+    hi: 4th भाव का स्वामी Saturn के साथ होने से संपत्ति पर असर पड़ता है।
+    hinglish: 4th house ka swami Saturn ke saath hone se property par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-024
+  topic: property
+  condition: dasha.maha == 'Mars'
+  weight: 2
+  effect:
+    en: The current Mars dasha activates matters of property.
+    hi: चल रही मंगल दशा संपत्ति से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Mars dasha property se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: PRO-025
+  topic: property
+  condition: dasha.antar == 'Mars'
+  weight: 1
+  effect:
+    en: The current Mars dasha activates matters of property.
+    hi: चल रही मंगल दशा संपत्ति से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Mars dasha property se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft

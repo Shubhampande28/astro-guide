@@ -1,0 +1,360 @@
+- id: CAR-001
+  topic: career
+  condition: lord(10) in house(1)
+  weight: 4
+  effect:
+    en: The lord of the 10th house placed in the 1st house supports career.
+    hi: 10th भाव का स्वामी 1st भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 1st house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-002
+  topic: career
+  condition: lord(10) in house(2)
+  weight: 1
+  effect:
+    en: The lord of the 10th house placed in the 2nd house supports career.
+    hi: 10th भाव का स्वामी 2nd भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 2nd house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-003
+  topic: career
+  condition: lord(10) in house(3)
+  weight: 2
+  effect:
+    en: The lord of the 10th house placed in the 3rd house supports career.
+    hi: 10th भाव का स्वामी 3rd भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 3rd house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-004
+  topic: career
+  condition: lord(10) in house(4)
+  weight: 3
+  effect:
+    en: The lord of the 10th house placed in the 4th house supports career.
+    hi: 10th भाव का स्वामी 4th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 4th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-005
+  topic: career
+  condition: lord(10) in house(5)
+  weight: 4
+  effect:
+    en: The lord of the 10th house placed in the 5th house supports career.
+    hi: 10th भाव का स्वामी 5th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 5th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-006
+  topic: career
+  condition: lord(10) in house(6)
+  weight: -3
+  effect:
+    en: The lord of the 10th house placed in the 6th house creates obstacles for career.
+    hi: 10th भाव का स्वामी 6th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 6th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-007
+  topic: career
+  condition: lord(10) in house(7)
+  weight: 3
+  effect:
+    en: The lord of the 10th house placed in the 7th house supports career.
+    hi: 10th भाव का स्वामी 7th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 7th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-008
+  topic: career
+  condition: lord(10) in house(8)
+  weight: -4
+  effect:
+    en: The lord of the 10th house placed in the 8th house creates obstacles for career.
+    hi: 10th भाव का स्वामी 8th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 8th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-009
+  topic: career
+  condition: lord(10) in house(9)
+  weight: 4
+  effect:
+    en: The lord of the 10th house placed in the 9th house supports career.
+    hi: 10th भाव का स्वामी 9th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 9th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-010
+  topic: career
+  condition: lord(10) in house(10)
+  weight: 3
+  effect:
+    en: The lord of the 10th house placed in the 10th house supports career.
+    hi: 10th भाव का स्वामी 10th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 10th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-011
+  topic: career
+  condition: lord(10) in house(11)
+  weight: 2
+  effect:
+    en: The lord of the 10th house placed in the 11th house supports career.
+    hi: 10th भाव का स्वामी 11th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 11th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-012
+  topic: career
+  condition: lord(10) in house(12)
+  weight: -2
+  effect:
+    en: The lord of the 10th house placed in the 12th house creates obstacles for
+      career.
+    hi: 10th भाव का स्वामी 12th भाव में होने से करियर पर प्रभाव पड़ता है।
+    hinglish: 10th house ka swami 12th house mein hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-013
+  topic: career
+  condition: planet(Saturn).dignity == 'exalted'
+  weight: 4
+  effect:
+    en: Saturn, the significator of career, is exalted and strongly favours matters
+      of career.
+    hi: शनि करियर का कारक है और exalted होने से इस पर असर पड़ता है।
+    hinglish: Saturn, career ka karaka, exalted hai aur isse career par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-014
+  topic: career
+  condition: planet(Saturn).dignity == 'own'
+  weight: 2
+  effect:
+    en: Saturn, the significator of career, is own and supports matters of career.
+    hi: शनि करियर का कारक है और own होने से इस पर असर पड़ता है।
+    hinglish: Saturn, career ka karaka, own hai aur isse career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-015
+  topic: career
+  condition: planet(Saturn).dignity == 'moolatrikona'
+  weight: 3
+  effect:
+    en: Saturn, the significator of career, is moolatrikona and favours matters of
+      career.
+    hi: शनि करियर का कारक है और moolatrikona होने से इस पर असर पड़ता है।
+    hinglish: Saturn, career ka karaka, moolatrikona hai aur isse career par asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-016
+  topic: career
+  condition: planet(Saturn).dignity == 'debilitated'
+  weight: -4
+  effect:
+    en: Saturn, the significator of career, is debilitated and weakens matters of
+      career.
+    hi: शनि करियर का कारक है और debilitated होने से इस पर असर पड़ता है।
+    hinglish: Saturn, career ka karaka, debilitated hai aur isse career par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-017
+  topic: career
+  condition: planet(Sun).dignity == 'exalted'
+  weight: 3
+  effect:
+    en: Sun, a secondary significator of career, is exalted, affecting career.
+    hi: सूर्य भी करियर का एक कारक है और exalted होने से असर होता है।
+    hinglish: Sun, career ka secondary karaka, exalted hai, isse bhi asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-018
+  topic: career
+  condition: planet(Sun).dignity == 'debilitated'
+  weight: -3
+  effect:
+    en: Sun, a secondary significator of career, is debilitated, affecting career.
+    hi: सूर्य भी करियर का एक कारक है और debilitated होने से असर होता है।
+    hinglish: Sun, career ka secondary karaka, debilitated hai, isse bhi asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-019
+  topic: career
+  condition: planet(Saturn).retro == True
+  weight: -1
+  effect:
+    en: Saturn retrograde can delay outcomes related to career, though the eventual
+      result is not ruled out.
+    hi: शनि वक्री होने से करियर से जुड़े परिणामों में देरी हो सकती है।
+    hinglish: Saturn vakri hone se career se related results mein deri ho sakti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-020
+  topic: career
+  condition: aspects(Jupiter, 10)
+  weight: 3
+  effect:
+    en: Jupiter aspecting the 10th house brings a protective, favourable influence
+      on career.
+    hi: Jupiter की 10th भाव पर दृष्टि करियर को प्रभावित करती है।
+    hinglish: Jupiter ki 10th house par drishti career ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-021
+  topic: career
+  condition: aspects(Saturn, 10)
+  weight: -2
+  effect:
+    en: Saturn aspecting the 10th house brings a restrictive influence on career.
+    hi: Saturn की 10th भाव पर दृष्टि करियर को प्रभावित करती है।
+    hinglish: Saturn ki 10th house par drishti career ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-022
+  topic: career
+  condition: conj(lord(10), Jupiter)
+  weight: 3
+  effect:
+    en: The 10th lord conjunct Jupiter brings a benefic influence on career.
+    hi: 10th भाव का स्वामी Jupiter के साथ होने से करियर पर असर पड़ता है।
+    hinglish: 10th house ka swami Jupiter ke saath hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-023
+  topic: career
+  condition: conj(lord(10), Saturn)
+  weight: -2
+  effect:
+    en: The 10th lord conjunct Saturn brings a challenging influence on career.
+    hi: 10th भाव का स्वामी Saturn के साथ होने से करियर पर असर पड़ता है।
+    hinglish: 10th house ka swami Saturn ke saath hone se career par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-024
+  topic: career
+  condition: dasha.maha == 'Saturn'
+  weight: 2
+  effect:
+    en: The current Saturn dasha activates matters of career.
+    hi: चल रही शनि दशा करियर से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Saturn dasha career se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: CAR-025
+  topic: career
+  condition: dasha.antar == 'Saturn'
+  weight: 1
+  effect:
+    en: The current Saturn dasha activates matters of career.
+    hi: चल रही शनि दशा करियर से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Saturn dasha career se related topics ko activate karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft

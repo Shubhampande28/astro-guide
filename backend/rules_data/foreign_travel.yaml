@@ -1,0 +1,385 @@
+- id: FOR-001
+  topic: foreign_travel
+  condition: lord(12) in house(1)
+  weight: 4
+  effect:
+    en: The lord of the 12th house placed in the 1st house supports foreign travel.
+    hi: 12th भाव का स्वामी 1st भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 1st house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-002
+  topic: foreign_travel
+  condition: lord(12) in house(2)
+  weight: 1
+  effect:
+    en: The lord of the 12th house placed in the 2nd house supports foreign travel.
+    hi: 12th भाव का स्वामी 2nd भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 2nd house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-003
+  topic: foreign_travel
+  condition: lord(12) in house(3)
+  weight: 2
+  effect:
+    en: The lord of the 12th house placed in the 3rd house supports foreign travel.
+    hi: 12th भाव का स्वामी 3rd भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 3rd house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-004
+  topic: foreign_travel
+  condition: lord(12) in house(4)
+  weight: 3
+  effect:
+    en: The lord of the 12th house placed in the 4th house supports foreign travel.
+    hi: 12th भाव का स्वामी 4th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 4th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-005
+  topic: foreign_travel
+  condition: lord(12) in house(5)
+  weight: 4
+  effect:
+    en: The lord of the 12th house placed in the 5th house supports foreign travel.
+    hi: 12th भाव का स्वामी 5th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 5th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-006
+  topic: foreign_travel
+  condition: lord(12) in house(6)
+  weight: -3
+  effect:
+    en: The lord of the 12th house placed in the 6th house creates obstacles for foreign
+      travel.
+    hi: 12th भाव का स्वामी 6th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 6th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-007
+  topic: foreign_travel
+  condition: lord(12) in house(7)
+  weight: 3
+  effect:
+    en: The lord of the 12th house placed in the 7th house supports foreign travel.
+    hi: 12th भाव का स्वामी 7th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 7th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-008
+  topic: foreign_travel
+  condition: lord(12) in house(8)
+  weight: -4
+  effect:
+    en: The lord of the 12th house placed in the 8th house creates obstacles for foreign
+      travel.
+    hi: 12th भाव का स्वामी 8th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 8th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-009
+  topic: foreign_travel
+  condition: lord(12) in house(9)
+  weight: 4
+  effect:
+    en: The lord of the 12th house placed in the 9th house supports foreign travel.
+    hi: 12th भाव का स्वामी 9th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 9th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-010
+  topic: foreign_travel
+  condition: lord(12) in house(10)
+  weight: 3
+  effect:
+    en: The lord of the 12th house placed in the 10th house supports foreign travel.
+    hi: 12th भाव का स्वामी 10th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 10th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-011
+  topic: foreign_travel
+  condition: lord(12) in house(11)
+  weight: 2
+  effect:
+    en: The lord of the 12th house placed in the 11th house supports foreign travel.
+    hi: 12th भाव का स्वामी 11th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 11th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-012
+  topic: foreign_travel
+  condition: lord(12) in house(12)
+  weight: -2
+  effect:
+    en: The lord of the 12th house placed in the 12th house creates obstacles for
+      foreign travel.
+    hi: 12th भाव का स्वामी 12th भाव में होने से विदेश यात्रा पर प्रभाव पड़ता है।
+    hinglish: 12th house ka swami 12th house mein hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-013
+  topic: foreign_travel
+  condition: planet(Rahu).dignity == 'exalted'
+  weight: 4
+  effect:
+    en: Rahu, the significator of foreign travel, is exalted and strongly favours
+      matters of foreign travel.
+    hi: राहु विदेश यात्रा का कारक है और exalted होने से इस पर असर पड़ता है।
+    hinglish: Rahu, videsh yatra ka karaka, exalted hai aur isse videsh yatra par
+      asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-014
+  topic: foreign_travel
+  condition: planet(Rahu).dignity == 'own'
+  weight: 2
+  effect:
+    en: Rahu, the significator of foreign travel, is own and supports matters of foreign
+      travel.
+    hi: राहु विदेश यात्रा का कारक है और own होने से इस पर असर पड़ता है।
+    hinglish: Rahu, videsh yatra ka karaka, own hai aur isse videsh yatra par asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-015
+  topic: foreign_travel
+  condition: planet(Rahu).dignity == 'moolatrikona'
+  weight: 3
+  effect:
+    en: Rahu, the significator of foreign travel, is moolatrikona and favours matters
+      of foreign travel.
+    hi: राहु विदेश यात्रा का कारक है और moolatrikona होने से इस पर असर पड़ता है।
+    hinglish: Rahu, videsh yatra ka karaka, moolatrikona hai aur isse videsh yatra
+      par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-016
+  topic: foreign_travel
+  condition: planet(Rahu).dignity == 'debilitated'
+  weight: -4
+  effect:
+    en: Rahu, the significator of foreign travel, is debilitated and weakens matters
+      of foreign travel.
+    hi: राहु विदेश यात्रा का कारक है और debilitated होने से इस पर असर पड़ता है।
+    hinglish: Rahu, videsh yatra ka karaka, debilitated hai aur isse videsh yatra
+      par asar padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-017
+  topic: foreign_travel
+  condition: planet(Moon).dignity == 'exalted'
+  weight: 3
+  effect:
+    en: Moon, a secondary significator of foreign travel, is exalted, affecting foreign
+      travel.
+    hi: चंद्र भी विदेश यात्रा का एक कारक है और exalted होने से असर होता है।
+    hinglish: Moon, videsh yatra ka secondary karaka, exalted hai, isse bhi asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-018
+  topic: foreign_travel
+  condition: planet(Moon).dignity == 'debilitated'
+  weight: -3
+  effect:
+    en: Moon, a secondary significator of foreign travel, is debilitated, affecting
+      foreign travel.
+    hi: चंद्र भी विदेश यात्रा का एक कारक है और debilitated होने से असर होता है।
+    hinglish: Moon, videsh yatra ka secondary karaka, debilitated hai, isse bhi asar
+      padta hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-019
+  topic: foreign_travel
+  condition: planet(Rahu).retro == True
+  weight: -1
+  effect:
+    en: Rahu retrograde can delay outcomes related to foreign travel, though the eventual
+      result is not ruled out.
+    hi: राहु वक्री होने से विदेश यात्रा से जुड़े परिणामों में देरी हो सकती है।
+    hinglish: Rahu vakri hone se videsh yatra se related results mein deri ho sakti
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-020
+  topic: foreign_travel
+  condition: aspects(Jupiter, 12)
+  weight: 3
+  effect:
+    en: Jupiter aspecting the 12th house brings a protective, favourable influence
+      on foreign travel.
+    hi: Jupiter की 12th भाव पर दृष्टि विदेश यात्रा को प्रभावित करती है।
+    hinglish: Jupiter ki 12th house par drishti videsh yatra ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-021
+  topic: foreign_travel
+  condition: aspects(Saturn, 12)
+  weight: -2
+  effect:
+    en: Saturn aspecting the 12th house brings a restrictive influence on foreign
+      travel.
+    hi: Saturn की 12th भाव पर दृष्टि विदेश यात्रा को प्रभावित करती है।
+    hinglish: Saturn ki 12th house par drishti videsh yatra ko asar karti hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-022
+  topic: foreign_travel
+  condition: conj(lord(12), Jupiter)
+  weight: 3
+  effect:
+    en: The 12th lord conjunct Jupiter brings a benefic influence on foreign travel.
+    hi: 12th भाव का स्वामी Jupiter के साथ होने से विदेश यात्रा पर असर पड़ता है।
+    hinglish: 12th house ka swami Jupiter ke saath hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-023
+  topic: foreign_travel
+  condition: conj(lord(12), Saturn)
+  weight: -2
+  effect:
+    en: The 12th lord conjunct Saturn brings a challenging influence on foreign travel.
+    hi: 12th भाव का स्वामी Saturn के साथ होने से विदेश यात्रा पर असर पड़ता है।
+    hinglish: 12th house ka swami Saturn ke saath hone se videsh yatra par asar padta
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-024
+  topic: foreign_travel
+  condition: dasha.maha == 'Rahu'
+  weight: 2
+  effect:
+    en: The current Rahu dasha activates matters of foreign travel.
+    hi: चल रही राहु दशा विदेश यात्रा से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Rahu dasha videsh yatra se related topics ko activate karti
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
+- id: FOR-025
+  topic: foreign_travel
+  condition: dasha.antar == 'Rahu'
+  weight: 1
+  effect:
+    en: The current Rahu dasha activates matters of foreign travel.
+    hi: चल रही राहु दशा विदेश यात्रा से जुड़े विषयों को सक्रिय करती है।
+    hinglish: Chal rahi Rahu dasha videsh yatra se related topics ko activate karti
+      hai.
+  source:
+    book: Brihat Parashara Hora Shastra
+    chapter: ''
+    verse: ''
+  remedies: []
+  status: draft
