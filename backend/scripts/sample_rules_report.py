@@ -7,7 +7,7 @@ the admin panel is Phase 9), so this report evaluates every rule
 regardless of status -- real user-facing answers will filter to approved
 rules only once that panel exists (see DECISIONS.md).
 
-Run with: python scripts/sample_rules_report.py
+Run with (from backend/): python -m scripts.sample_rules_report
 """
 
 from datetime import date, time

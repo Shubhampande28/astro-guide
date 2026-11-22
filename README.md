@@ -87,7 +87,7 @@ To see it work end-to-end for 3 example births (modern, 1943 wartime IST,
 and southern-hemisphere):
 
 ```
-docker compose exec backend python scripts/sample_rules_report.py
+docker compose exec backend python -m scripts.sample_rules_report
 ```
 
 This prints, for each birth and each topic, the matched rules with their

@@ -11,7 +11,7 @@ as status: draft, per CLAUDE.md 5.2 -- an astrologer reviews and approves
 them via the admin panel (F15, Phase 9) before they reach paying users.
 No chapter/verse numbers are invented; only the source book is named.
 
-Re-run with: python scripts/generate_seed_rules.py
+Re-run with (from backend/): python -m scripts.generate_seed_rules
 """
 
 from pathlib import Path
