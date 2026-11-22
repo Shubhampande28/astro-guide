@@ -12,6 +12,9 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+asyncpg://jyotish:jyotish@localhost:5432/jyotish_guru"
     redis_url: str = "redis://localhost:6379/0"
     ai_provider: str = "none"  # claude | openai | gemini | none
+    claude_api_key: str = ""
+    openai_api_key: str = ""
+    gemini_api_key: str = ""
     jwt_secret: str = "change-me-in-production"
 
 

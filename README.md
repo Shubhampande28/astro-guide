@@ -73,6 +73,37 @@ proceeds on the strength of the self-verification above. The pre-1955
 ascendant precision question remains open — worth revisiting before this
 engine is used for real predictions involving pre-1955 births.
 
+## Trying the chat pipeline
+
+With the containers running, open **http://localhost:8000/docs**, find
+**POST /chat**, click "Try it out", and send a message plus birth details:
+
+```json
+{
+  "message": "How is my career looking?",
+  "language": "en",
+  "birth_date": "1990-05-15",
+  "birth_time": "08:30:00",
+  "timezone": "Asia/Kolkata",
+  "latitude": 28.6139,
+  "longitude": 77.2090
+}
+```
+
+`language` can be `en`, `hi`, or `hinglish`. You'll get back the full
+6-part answer card: topic, summary, why (matched rules), sources, timing,
+remedies, and confidence. Try a distress message (e.g. "I want to kill
+myself") and you'll see it short-circuits to the Tele-MANAS helpline
+instead of running a reading — try a restricted one too (e.g. "when will I
+die?") and you'll see it's politely declined instead of treated as a
+crisis.
+
+The AI rewrite step is off by default (`AI_PROVIDER=none` in `.env`) —
+answers come from the templates. If you later get a Claude/OpenAI/Gemini
+API key, set `AI_PROVIDER` and the matching `*_API_KEY` in `.env` and
+restart; if anything about that call fails, it silently falls back to the
+template, so it's safe to try.
+
 ## Trying the rules engine
 
 The rules engine takes a chart plus a topic ("career", "marriage", "money",
@@ -135,16 +166,18 @@ jyotish-guru/
   docs/           API reference and rule-writing guide
 ```
 
-## Current status: Phase 2 in progress
+## Current status: Phase 3 in progress
 
 Phase 0 (repo structure, Docker Compose, CI) is done. Phase 1's Kundli
 engine is built, unit-tested, and self-verified against an independent
 implementation (one open item remains: pre-1955 ascendant precision — see
-below). Phase 2's rules engine is built: a safe condition DSL (no `eval`),
-an evaluator producing score/verdict/timing windows, and 200 seed rules
-(25 per topic across all 8 MVP topics), all unit-tested (77 tests passing
-across both phases) and demonstrated end-to-end with the sample report
-above.
+below). Phase 2's rules engine (safe condition DSL, evaluator, 200 seed
+rules) is done. Phase 3's chat pipeline is built: safety check, topic +
+timeframe detection in English/Hindi/Hinglish, the 6-part answer card,
+optional AI rewrite with a verifier guard against hallucination, and the
+`/chat` endpoint — all unit-tested (120 tests passing across all three
+phases). The required 50-question benchmark scores **100% topic accuracy
+and 0 safety failures** (target was ≥90% / 0).
 
 ### What I still need from you to finish Phase 1
 
@@ -180,3 +213,13 @@ or weights yet. Run the sample report above and skim a topic or two; if
 anything reads wrong astrologically, that's exactly the kind of feedback
 the admin panel (Phase 9) is meant to collect — for now, just tell me and
 I'll adjust the generator or the rule content directly.
+
+### What to review for Phase 3 — important
+
+`app/chat/safety.py`'s self-harm/distress phrase lists are my first pass,
+**not a clinically validated classifier**. They pass the 50-question test
+set with zero failures, but that test set is also something I wrote, not
+a mental-health professional. Before this app is used by real people, I'd
+strongly recommend having someone with crisis-response experience review
+and expand that keyword list — this is the one piece of the whole system
+where a gap has real consequences.
