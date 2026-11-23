@@ -197,10 +197,15 @@ already have installed) — open the `android/` folder as a project in it.
    alias for your computer's `localhost` — this only works for the
    emulator, not a real phone, unless you change `API_BASE_URL` in
    `android/app/build.gradle.kts` to your computer's actual network IP.
-5. On first launch: enter any phone number → check
-   `docker compose logs backend` for a line like `OTP for +91...: 123456`
-   → enter that code → agree to the consent screen → fill in a birth
-   profile → you're in the chat screen.
+5. On first launch you'll see the welcome screen. Tap **"Skip for now"**
+   to go straight to consent → onboarding → chat, no phone number needed
+   (or tap "Sign in with phone": enter any number → check `docker compose
+   logs backend` for a line like `OTP for +91...: 123456` → enter that
+   code).
+6. After consent, pick **Myself** or **A family member**, fill in name/
+   DOB/time, and pick the birth place as **State → District → City**
+   (typing filters the list at each step) — no latitude/longitude is ever
+   asked for or shown. You're then in the chat screen.
 
 If you'd rather build from a terminal instead of Android Studio's Run
 button:
@@ -227,16 +232,21 @@ Phases 0-4 are done:
   passing.
 
 Phase 5 is the first thing you can actually open and tap through: a real
-Android app (Kotlin + Jetpack Compose) with onboarding, phone OTP login,
-the chat screen with topic chips and the 6-part answer card, a profile
+Android app (Kotlin + Jetpack Compose) with onboarding, optional phone
+sign-in (a "Skip for now" guest path needs no phone number at all), the
+chat screen with topic chips and the 6-part answer card, a profile
 switcher (for up to 5 family members), a language switch (English/Hindi/
 Hinglish), the "My Kundli" view (lagna, all 9 grahas, full dasha
-timeline), and "delete my data". It's been built, installed, and driven
-end-to-end on this machine's Android emulator — every screen in the flow
-above was visually confirmed working against the real backend, not just
-compiled. See DECISIONS.md for a few scope calls made along the way
-(plain text fields instead of native date pickers for now, no ViewModel
-layer yet, etc.) — none of them block you from using the app today.
+timeline), and "delete my data". Birth place is picked as State → District
+→ City from a real offline India dataset (7,324 places, all 36 states/
+UTs) — latitude/longitude are never asked for or shown. A returning phone
+sign-in with an existing profile skips straight to chat rather than
+re-asking for anything. It's been built, installed, and driven end-to-end
+on this machine's Android emulator — every screen in the flows above was
+visually confirmed working against the real backend, not just compiled.
+See DECISIONS.md for a few scope calls made along the way (plain text
+fields instead of native date pickers for now, no ViewModel layer yet,
+etc.) — none of them block you from using the app today.
 
 ### What I still need from you to finish Phase 1
 

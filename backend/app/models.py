@@ -19,7 +19,8 @@ class User(Base):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    phone_number: Mapped[str] = mapped_column(String(20), unique=True, index=True)
+    phone_number: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    is_guest: Mapped[bool] = mapped_column(Boolean, default=False)
     consent_given_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 

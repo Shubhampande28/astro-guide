@@ -227,6 +227,16 @@ more overhead than value right now. Switch to real Alembic migrations once
 the schema survives contact with the Android app without changing, so a
 production upgrade never risks a hand-edited `ALTER TABLE`.
 
+**2026-11-23, observed consequence:** adding `User.is_guest` (for the
+skip-sign-in flow, see the guest-login entry below) hit exactly the risk
+this decision names: the existing dev Postgres volume already had a
+`users` table from before the column existed, `create_all` doesn't alter
+existing tables, and every insert into `users` failed with `column
+"is_guest" of relation "users" does not exist` until the dev volume was
+dropped and recreated (`docker compose down -v`). Fine for local dev data;
+would not be fine for anything with real users in it -- another reason to
+move to real migrations before this schema reaches production.
+
 ### 2026-11-23 — Phone OTP has no real SMS gateway yet
 **Decision:** `app/accounts/otp.py`'s `send_otp()` just logs the code
 (dev-only); the request/verify/JWT flow is real, only the delivery
@@ -236,6 +246,65 @@ MSG91, commonly used for Indian OTP) needs the founder's account/API key
 regardless. The interface is isolated to this one function, so swapping in
 a real provider later doesn't touch auth logic, the DB schema, or any
 caller.
+
+### 2026-11-23 — Sign-in is optional: a guest account with no phone number
+**Decision:** Added `POST /auth/guest` (`app/accounts/router.py`), which
+creates a `User` with `is_guest=True` and a synthetic `phone_number` (e.g.
+`guest:a1b2c3...`) -- no phone number is ever collected -- and returns a
+JWT exactly like OTP verification does. The Android app's first screen now
+offers "Sign in with phone" or "Skip for now"; skipping calls this
+endpoint and proceeds straight to consent -> onboarding -> chat.
+**Reason:** Founder feedback: requiring a phone number before someone can
+even try the app is unnecessary friction for a user who "thinks this is
+not important" and just wants to ask a question. Everything downstream
+(consent, profile encryption, history, delete-my-data) works identically
+for a guest account; only the login method and the absence of a phone
+number differ. A guest can still sign in with a phone number later from
+the menu -- that's a separate, not-yet-built step (currently "Sign in"
+from Home always starts a *new* phone login rather than *upgrading* the
+current guest session to one; linking the two is future work once there's
+a reason to, e.g. before Phase 8 payments).
+
+### 2026-11-23 — Birth place: a real offline India dataset, not raw lat/lon
+**Decision:** Onboarding no longer asks for latitude/longitude at all.
+Birth place is selected as **State -> District -> City/Town** for India
+(`IndiaPlacesRepository`, backed by `app/src/main/assets/india_places.json`,
+7,324 real places across all 36 states/UTs, generated from GeoNames'
+`cities500` export + `admin1`/`admin2` code files by
+`android/scripts/build_india_places.py`), or a short fallback list
+(`InternationalPlaces.kt`) for births outside India. Latitude/longitude/
+timezone are looked up from the selected place and sent to the backend
+without ever being shown to the user.
+**Reason:** Founder feedback: "no one knows the latitude and longitude" --
+asking for them was never reasonable to expect from a non-technical user,
+and this is exactly the "offline GeoNames... database" CLAUDE.md 5.1
+already specified for place search (previously deferred for Phase 1's
+narrower scope: the chart math itself). Also addressed directly: "atleast
+india you should know all places" (comprehensive India coverage, not a
+hand-picked list of ~40 cities) and "ask for state and district as well so
+as more accuracy is found" (disambiguates same-named towns in different
+states/districts, and narrows a long list to a manageable one at each
+step). The raw GeoNames text dumps (~44MB) are not committed -- only the
+generated `india_places.json` (646KB) is; the generator script documents
+how to re-fetch the inputs if the dataset needs updating.
+
+### 2026-11-23 — "Myself" vs "a family member", and reusing a returning user's own profile
+**Decision:** Onboarding now opens by asking "Whose Kundli is this? Myself
+/ A family member" (`relation: "self" | "family"`, already part of the
+Phase 4 data model, just not surfaced as an explicit choice before).
+Separately, `SplashGate` (`ui/nav/AppNav.kt`) now explicitly prefers the
+profile with `relation == "self"` as the active profile when a returning
+user's profile list is non-empty, rather than just whichever profile
+happens to be first in the list.
+**Reason:** Founder feedback: "if they sign in they fetch that info from
+there if its for them... if someone else then they can enter manually."
+A phone account that already has a profile already skips onboarding
+entirely on a later sign-in (profiles are looked up by phone number, and
+an empty list is the only thing that routes to onboarding) -- that part
+already worked. What was missing was making the self/family choice
+explicit in the UI (it was silently hardcoded to `"self"` before) and
+making sure *which* profile gets reused on return is deliberately the
+user's own, not just the first one created.
 
 ### 2026-11-23 — What's encrypted at rest and what isn't
 **Decision:** `Profile.birth_date/birth_time/latitude/longitude` and

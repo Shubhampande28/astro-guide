@@ -15,6 +15,9 @@ interface ApiService {
     @POST("auth/otp/verify")
     suspend fun verifyOtp(@Body body: OtpVerifyBody): TokenResponse
 
+    @POST("auth/guest")
+    suspend fun createGuestSession(): TokenResponse
+
     @POST("me/consent")
     suspend fun giveConsent(): Response<Unit>
 

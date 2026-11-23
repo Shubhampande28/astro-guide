@@ -2,6 +2,7 @@
 delete-my-data endpoints (CLAUDE.md Phase 4)."""
 
 from datetime import UTC, datetime
+from uuid import uuid4
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import delete, select
@@ -90,6 +91,22 @@ async def verify_otp(
     await db.execute(delete(OtpCode).where(OtpCode.phone_number == request.phone_number))
     await db.commit()
 
+    return TokenResponse(access_token=create_access_token(user.id))
+
+
+@auth_router.post("/guest", response_model=TokenResponse)
+async def create_guest(db: AsyncSession = Depends(get_db)) -> TokenResponse:
+    """Skip sign-in: creates an account with no phone number at all, so
+    someone who doesn't want to share a phone number can still go through
+    consent -> onboarding -> chat. Everything downstream (consent, profile
+    encryption, history) works identically to a phone account; only the
+    login method differs, and nothing here is less private than the OTP
+    path -- it's strictly less information collected.
+    """
+    user = User(phone_number=f"guest:{uuid4().hex}", is_guest=True)
+    db.add(user)
+    await db.flush()
+    await db.commit()
     return TokenResponse(access_token=create_access_token(user.id))
 
 

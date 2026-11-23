@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JyotishGuruTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    AppNavHost(api = app.api, tokenStore = app.tokenStore)
+                    AppNavHost(api = app.api, tokenStore = app.tokenStore, indiaPlaces = app.indiaPlaces)
                 }
             }
         }

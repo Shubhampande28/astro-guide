@@ -16,6 +16,32 @@ def test_otp_verify_without_request_fails(client):
     assert response.status_code == 400
 
 
+def test_guest_login_requires_no_phone_number(client):
+    response = client.post("/auth/guest")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["access_token"]
+    assert body["token_type"] == "bearer"
+
+
+def test_guest_token_works_like_a_real_login(client):
+    token = client.post("/auth/guest").json()["access_token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    response = client.get("/profiles", headers=headers)
+    assert response.status_code == 200
+    assert response.json() == []
+
+    consent_response = client.post("/me/consent", headers=headers)
+    assert consent_response.status_code == 204
+
+
+def test_each_guest_login_is_a_separate_account(client):
+    token_a = client.post("/auth/guest").json()["access_token"]
+    token_b = client.post("/auth/guest").json()["access_token"]
+    assert token_a != token_b
+
+
 def test_login_returns_working_token(client, auth_headers):
     response = client.get("/profiles", headers=auth_headers)
     assert response.status_code == 200
