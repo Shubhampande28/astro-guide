@@ -33,6 +33,38 @@ def test_unclear_message_has_no_topic():
     assert detect("hello").topic is None
 
 
+def test_detects_money_for_everyday_phrasing_not_just_the_word_money():
+    assert detect("Will I become rich suddenly?").topic == "money"
+    assert detect("Any chance of winning the lottery?").topic == "money"
+    assert detect("will I get a salary hike this year?").topic == "money"
+
+
+def test_detects_career_for_everyday_phrasing_not_just_the_word_career():
+    assert detect("should I resign from my current job?").topic == "career"
+    assert detect("will I get transferred to another office?").topic == "career"
+
+
+def test_detects_marriage_for_everyday_phrasing():
+    assert detect("will my engagement happen this year?").topic == "marriage"
+    assert detect("how is my relationship with my partner?").topic == "marriage"
+
+
+def test_detects_property_for_everyday_phrasing():
+    assert detect("should I buy a flat this year?").topic == "property"
+
+
+def test_detects_foreign_travel_for_everyday_phrasing():
+    assert detect("will I be able to settle abroad?").topic == "foreign_travel"
+
+
+def test_detects_children_for_everyday_phrasing():
+    assert detect("when will we conceive?").topic == "children"
+
+
+def test_detects_education_for_everyday_phrasing():
+    assert detect("will I get admission in a good college?").topic == "education"
+
+
 def test_extracts_year():
     intent = detect("how is my career in 2028?")
     assert intent.topic == "career"

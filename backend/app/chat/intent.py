@@ -69,7 +69,26 @@ _TOPIC_KEYWORDS: dict[str, list[str]] = {
         "career",
         "job",
         "promotion",
+        "promoted",
         "business",
+        "work",
+        "profession",
+        "employment",
+        "unemployed",
+        "interview",
+        "appraisal",
+        "resign",
+        "resignation",
+        "switch job",
+        "new job",
+        "startup",
+        "boss",
+        "office",
+        "posting",
+        "transfer",
+        "govt job",
+        "government job",
+        "sarkari naukri",
         "naukri",
         "naukari",
         "kaam",
@@ -77,88 +96,177 @@ _TOPIC_KEYWORDS: dict[str, list[str]] = {
         "करियर",
         "व्यापार",
         "काम",
+        "तरक्की",
+        "तरक्की कब",
         "job kab milegi",
+        "promotion kab",
+        "tarakki",
     ],
     "marriage": [
         "marriage",
         "marry",
         "married",
+        "wedding",
         "spouse",
         "husband",
         "wife",
+        "fiance",
+        "fiancee",
+        "engagement",
+        "engaged",
+        "love marriage",
+        "arranged marriage",
+        "partner",
+        "boyfriend",
+        "girlfriend",
+        "relationship",
+        "divorce",
         "shaadi",
         "shadi",
         "vivah",
+        "rishta",
         "विवाह",
         "शादी",
         "पति",
         "पत्नी",
+        "सगाई",
+        "रिश्ता",
     ],
     "money": [
         "money",
         "wealth",
+        "wealthy",
+        "rich",
+        "richer",
         "finance",
         "financial",
         "income",
+        "salary",
+        "savings",
+        "loan",
+        "debt",
+        "lottery",
+        "bonus",
+        "hike",
+        "increment",
+        "profit",
+        "loss",
+        "earn",
+        "earning",
+        "afford",
         "paisa",
+        "paise",
         "dhan",
         "laabh",
+        "ameer",
+        "amir",
+        "kamai",
+        "dhan prapti",
         "धन",
         "पैसा",
+        "पैसे",
         "आय",
         "वित्त",
         "आर्थिक",
+        "अमीर",
+        "कमाई",
+        "लॉटरी",
     ],
     "health": [
         "health",
         "illness",
+        "ill",
         "sick",
+        "disease",
+        "fitness",
+        "recover",
+        "recovery",
+        "surgery",
+        "wellbeing",
+        "well-being",
         "tabiyat",
         "sehat",
         "सेहत",
         "स्वास्थ्य",
         "बीमार",
+        "तबीयत",
     ],
     "education": [
         "study",
         "studies",
+        "studying",
         "exam",
+        "exams",
         "education",
+        "college",
+        "university",
+        "admission",
+        "degree",
+        "result",
+        "results",
+        "marks",
         "padhai",
         "shiksha",
         "पढ़ाई",
         "शिक्षा",
         "परीक्षा",
+        "कॉलेज",
+        "दाखिला",
     ],
     "foreign_travel": [
         "abroad",
         "foreign",
         "visa",
+        "immigration",
+        "immigrate",
+        "migrate",
+        "relocate",
+        "settle abroad",
+        "settle overseas",
+        "overseas",
         "videsh",
+        "pravaas",
         "विदेश",
         "वीज़ा",
         "यात्रा",
+        "प्रवास",
     ],
     "children": [
         "child",
         "children",
+        "kids",
         "baby",
+        "pregnant",
+        "pregnancy",
+        "conceive",
         "santan",
         "bachche",
-        "बच्चे",
+        "bachcha",
         "संतान",
+        "बच्चे",
         "बच्चा",
+        "गर्भ",
+        "गर्भवती",
     ],
     "property": [
         "property",
         "house",
+        "home",
+        "flat",
+        "apartment",
         "land",
+        "plot",
+        "real estate",
+        "buy a house",
+        "buying a house",
         "ghar",
+        "makaan",
         "zameen",
+        "जमीन",
         "संपत्ति",
         "मकान",
         "ज़मीन",
-        "जमीन",
+        "फ्लैट",
     ],
 }
 
@@ -183,9 +291,25 @@ class Intent:
     is_followup: bool
 
 
-def _find_keyword_topic(lowered: str, keywords: dict[str, list[str]]) -> str | None:
-    for topic, phrases in keywords.items():
-        if any(phrase in lowered for phrase in phrases):
+def _compile_keyword_patterns(
+    keywords: dict[str, list[str]],
+) -> dict[str, list[re.Pattern[str]]]:
+    # Word-boundary matching, not plain substring: otherwise a short keyword
+    # like "ill" (health) would false-positive inside "will" ("will I...?"),
+    # silently misrouting almost every question into the wrong topic.
+    return {
+        topic: [re.compile(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)") for phrase in phrases]
+        for topic, phrases in keywords.items()
+    }
+
+
+_RESTRICTED_PATTERNS = _compile_keyword_patterns(_RESTRICTED_KEYWORDS)
+_TOPIC_PATTERNS = _compile_keyword_patterns(_TOPIC_KEYWORDS)
+
+
+def _find_keyword_topic(lowered: str, patterns: dict[str, list[re.Pattern[str]]]) -> str | None:
+    for topic, compiled in patterns.items():
+        if any(pattern.search(lowered) for pattern in compiled):
             return topic
     return None
 
@@ -198,11 +322,11 @@ def detect(message: str, previous_topic: str | None = None) -> Intent:
     year_match = _YEAR_PATTERN.search(lowered)
     year = int(year_match.group(0)) if year_match else None
 
-    restricted = _find_keyword_topic(lowered, _RESTRICTED_KEYWORDS)
+    restricted = _find_keyword_topic(lowered, _RESTRICTED_PATTERNS)
     if restricted:
         return Intent(topic=restricted, year=year, is_followup=False)
 
-    topic = _find_keyword_topic(lowered, _TOPIC_KEYWORDS)
+    topic = _find_keyword_topic(lowered, _TOPIC_PATTERNS)
     if topic:
         return Intent(topic=topic, year=year, is_followup=False)
 
