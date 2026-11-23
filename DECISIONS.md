@@ -395,3 +395,56 @@ of being committed to the repo.
 public NASA data anyway — no reason to version it. This does mean the very
 first `/chart` call (or test run) after a fresh clone needs internet access
 once; after that it's cached on disk.
+
+### 2026-11-24 — ViewModel per screen added (supersedes the 2026-11-23 "no ViewModel layer" entry)
+**Decision:** Home/Chat, Onboarding, Login and Kundli each got a
+`ViewModel` exposing `StateFlow<UiState>` (a hand-rolled `viewModelFactory`
+since the app has no DI framework); plain text input fields stay as
+`rememberSaveable` in the composable rather than moving into the
+ViewModel.
+**Reason:** UI_CHANGES.md A5 (external Android design review): rotating
+the phone mid-chat was losing messages and re-triggering API calls, which
+is a worse failure mode than the small added structure costs. ViewModels
+also give every screen a natural place to put the delete-confirmation flow
+(A1) and future retry/offline logic (Group F) without threading callbacks
+through the composable.
+
+### 2026-11-24 — Token storage moved off security-crypto to DataStore + Keystore
+**Decision:** `TokenStore` now AES/GCM-encrypts values with a key held in
+the Android Keystore (`KeystoreCrypto`) and persists them as base64 in a
+Preferences DataStore, instead of
+`androidx.security:security-crypto:1.1.0-alpha06`.
+**Reason:** UI_CHANGES.md A4: that library has been in alpha for years and
+is unmaintained. The public `TokenStore` API stays synchronous (a
+`runBlocking` read once at `Application.onCreate`, matching what
+`EncryptedSharedPreferences.create(...)` already did; an in-memory cache
+after that, with writes persisted asynchronously) so none of the existing
+call sites — the OkHttp interceptor on a background thread, several
+`LaunchedEffect`/`scope.launch` blocks on the main thread — had to change.
+
+### 2026-11-24 — compileSdk 36 / AGP 8.13.2, not AGP 9 / compileSdk 37
+**Decision:** UI_CHANGES.md A7 asked to raise compileSdk/targetSdk "to
+match" Google Play's current requirement, which is API 36. compileSdk and
+targetSdk were raised to 36 with AGP bumped to 8.13.2 (the latest 8.x
+release supporting it) and Gradle to 8.14.3. AGP 9.x / compileSdk 37 was
+deliberately not taken, even though it's the newer option, and several
+AndroidX libraries (navigation-compose 2.10.x, the newest Compose BOM,
+lifecycle 2.11.x) were pinned one notch below their absolute latest
+because their newest releases require it.
+**Reason:** AGP 9 is a major-version migration (new Gradle line, K2-only
+tooling changes) that UI_CHANGES.md didn't ask for, and this sandbox
+couldn't even download a newer *patch* of the existing Gradle 8.x wrapper
+(network allowlist issue specific to Java's `URLConnection`, confirmed
+working via `curl` to the same URL) — attempting a full AGP-9/Gradle-9
+migration un-verifiable in this environment was too large a risk to take
+silently. Revisit once compileSdk 37 is required or verification isn't
+network-constrained.
+
+### 2026-11-24 — Release API host is a placeholder
+**Decision:** UI_CHANGES.md A2 (cleartext traffic only in debug) needed a
+real `release` `API_BASE_URL`; `https://api.jyotishguru.app/` was used as
+a placeholder since no production host exists yet.
+**Reason:** A domain this project doesn't control shouldn't be invented
+silently without the founder's sign-off. Flagged with a `TODO(DECISIONS.md
+A2)` comment at the `release` build type in `app/build.gradle.kts` --
+replace before any release build is actually shipped.

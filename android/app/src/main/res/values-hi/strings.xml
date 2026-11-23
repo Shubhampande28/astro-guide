@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ज्योतिष गुरु</string>
+
+    <!-- Welcome -->
+    <string name="welcome_headline">अपने जीवन के बारे में कुछ भी पूछें</string>
+    <string name="welcome_subtitle">हर उत्तर में इसके पीछे के ग्रह और वह शास्त्रीय ग्रंथ दिखाया जाता है जिससे यह लिया गया है।</string>
+    <string name="welcome_signin">फ़ोन से साइन इन करें</string>
+    <string name="welcome_signin_helper">आपकी चैट सेव हो जाएगी ताकि आप इसे किसी और डिवाइस पर भी देख सकें।</string>
+    <string name="welcome_skip">अभी के लिए छोड़ें</string>
+    <string name="welcome_skip_helper">फ़ोन नंबर की ज़रूरत नहीं है। आप बाद में मेनू से साइन इन कर सकते हैं।</string>
+    <string name="welcome_error">शुरू नहीं हो सका। अपना कनेक्शन जांचें और फिर कोशिश करें।</string>
+
+    <!-- Consent -->
+    <string name="consent_title">शुरू करने से पहले</string>
+    <string name="consent_body">कुंडली बनाने के लिए हम आपका (या आपके परिवार के सदस्य का) नाम, जन्म तारीख, समय और स्थान पूछेंगे। यह डेटा एन्क्रिप्टेड है, कभी बेचा नहीं जाता, और आप इसे Settings से कभी भी हटा सकते हैं।</string>
+    <string name="consent_agree">मैं सहमत हूँ, आगे बढ़ें</string>
+    <string name="consent_error">कुछ गड़बड़ हो गई। कृपया फिर से कोशिश करें।</string>
+
+    <!-- Login -->
+    <string name="login_phone_prompt">अपना फ़ोन नंबर दर्ज करें</string>
+    <string name="login_phone_hint">+91XXXXXXXXXX</string>
+    <string name="login_send_otp">OTP भेजें</string>
+    <string name="login_otp_prompt">%1$s पर भेजा गया 6 अंकों का कोड दर्ज करें</string>
+    <string name="login_otp_hint">OTP</string>
+    <string name="login_verify">सत्यापित करें</string>
+    <string name="login_otp_error">OTP नहीं भेजा जा सका। अपना कनेक्शन जांचें और फिर कोशिश करें।</string>
+    <string name="login_verify_error">कोड गलत है या समय समाप्त हो गया। कृपया फिर से कोशिश करें।</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_whose_kundli">यह कुंडली किसकी है?</string>
+    <string name="onboarding_subtitle">इसका उपयोग कुंडली बनाने के लिए किया जाता है। आप 5 प्रोफ़ाइल तक जोड़ सकते हैं।</string>
+    <string name="onboarding_myself">मैं खुद</string>
+    <string name="onboarding_family_member">परिवार का सदस्य</string>
+    <string name="onboarding_name_self">आपका नाम</string>
+    <string name="onboarding_name_family">उनका नाम</string>
+    <string name="onboarding_birth_date">जन्म तारीख (YYYY-MM-DD)</string>
+    <string name="onboarding_birth_time">जन्म समय (HH:MM, 24 घंटे)</string>
+    <string name="onboarding_time_unknown">जन्म समय ज्ञात नहीं है</string>
+    <string name="onboarding_born_outside_india">भारत के बाहर जन्म हुआ</string>
+    <string name="onboarding_state">राज्य</string>
+    <string name="onboarding_district">ज़िला</string>
+    <string name="onboarding_city">शहर / कस्बा</string>
+    <string name="onboarding_city_outside">जन्म शहर (भारत के बाहर)</string>
+    <string name="onboarding_validation_error">कृपया सभी फ़ील्ड भरें और सूची से जन्म स्थान चुनें।</string>
+    <string name="onboarding_save_error">यह प्रोफ़ाइल सेव नहीं हो सकी। कृपया फ़ील्ड जांचें और फिर कोशिश करें।</string>
+    <string name="onboarding_create_kundli">कुंडली बनाएं</string>
+
+    <!-- Home / Chat -->
+    <string name="home_switch_profile_content_desc">प्रोफ़ाइल बदलें</string>
+    <string name="home_add_family_profile">परिवार की प्रोफ़ाइल जोड़ें</string>
+    <string name="home_language_content_desc">भाषा</string>
+    <string name="home_language_english">अंग्रेज़ी</string>
+    <string name="home_language_hindi">हिन्दी</string>
+    <string name="home_language_hinglish">हिंग्लिश</string>
+    <string name="home_my_kundli">मेरी कुंडली</string>
+    <string name="home_delete_my_data">मेरा डेटा हटाएं</string>
+    <string name="home_delete_dialog_title">अपना सारा डेटा हटाएं?</string>
+    <string name="home_delete_dialog_message">इसे वापस नहीं लाया जा सकता। आपकी प्रोफ़ाइलें, चैट इतिहास और कुंडली डेटा स्थायी रूप से हटा दिए जाएंगे।</string>
+    <string name="home_delete_dialog_confirm">हटाएं</string>
+    <string name="home_delete_dialog_cancel">रद्द करें</string>
+    <string name="home_input_placeholder">अपने जीवन के बारे में कुछ भी पूछें...</string>
+    <string name="home_send_content_desc">भेजें</string>
+    <string name="home_send_error">संदेश भेजने में कुछ गड़बड़ हुई। कृपया फिर से कोशिश करें।</string>
+
+    <!-- Kundli -->
+    <string name="kundli_title">मेरी कुंडली</string>
+    <string name="kundli_back_content_desc">वापस</string>
+    <string name="kundli_load_error">आपकी कुंडली लोड नहीं हो सकी। कृपया फिर से कोशिश करें।</string>
+    <string name="kundli_lagna_label">लग्न (Ascendant)</string>
+    <string name="kundli_current_dasha">वर्तमान दशा: %1$s / %2$s</string>
+    <string name="kundli_grahas_label">ग्रह</string>
+    <string name="kundli_header_graha">ग्रह</string>
+    <string name="kundli_header_sign">राशि</string>
+    <string name="kundli_header_house">भाव</string>
+    <string name="kundli_header_dignity">स्थिति</string>
+    <string name="kundli_dasha_timeline">विंशोत्तरी दशा समयरेखा</string>
+
+    <!-- Answer card -->
+    <string name="answer_hide_details">विवरण छुपाएं</string>
+    <string name="answer_why_sources_timing">क्यों? स्रोत, समय</string>
+    <string name="answer_section_why">क्यों</string>
+    <string name="answer_section_sources">स्रोत</string>
+    <string name="answer_section_timing">समय</string>
+    <string name="answer_section_remedies">उपाय</string>
+    <string name="answer_confidence">विश्वसनीयता: %1$s</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pre-Android-12 (API < 31) backup rules; see data_extraction_rules.xml
+     for the same exclusion on API 31+ (A3). -->
+<full-backup-content>
+    <exclude domain="file" path="datastore/secure_prefs.preferences_pb" />
+</full-backup-content>

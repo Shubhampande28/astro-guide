@@ -140,9 +140,3 @@ data class ChartResponse(
     @SerializedName("current_maha_dasha") val currentMahaDasha: String?,
     @SerializedName("current_antar_dasha") val currentAntarDasha: String?,
 )
-
-// The 8 topics the backend's rules engine understands, for the chip row.
-val TOPICS = listOf(
-    "career", "marriage", "money", "health",
-    "education", "foreign_travel", "children", "property",
-)

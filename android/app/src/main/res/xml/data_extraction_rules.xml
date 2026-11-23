@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+ (API 31+) backup/transfer rules (A3). The token store is a
+     DataStore file encrypted with a key that lives only in this device's
+     Android Keystore (see TokenStore.kt / A4): restoring it onto another
+     device would just be useless ciphertext, so it's excluded outright
+     rather than shipped and silently failing to decrypt. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="datastore/secure_prefs.preferences_pb" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="datastore/secure_prefs.preferences_pb" />
+    </device-transfer>
+</data-extraction-rules>

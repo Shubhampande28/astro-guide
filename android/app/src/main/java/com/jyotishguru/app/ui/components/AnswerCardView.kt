@@ -17,8 +17,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.jyotishguru.app.R
 import com.jyotishguru.app.ui.theme.VerdictColors
 
 /** The 6-part answer card from CLAUDE.md F3/6.4: Summary, Why, Sources,
@@ -55,7 +57,7 @@ fun AnswerCardView(
 
             if (!isSafetyResponse && !isDeclined && (why.isNotEmpty() || sources.isNotEmpty() || timing.isNotEmpty())) {
                 Text(
-                    if (expanded) "Hide details" else "Why? Sources, timing",
+                    stringResource(if (expanded) R.string.answer_hide_details else R.string.answer_why_sources_timing),
                     color = MaterialTheme.colorScheme.secondary,
                     style = MaterialTheme.typography.labelMedium,
                     modifier = Modifier
@@ -65,19 +67,19 @@ fun AnswerCardView(
 
                 if (expanded) {
                     if (why.isNotEmpty()) {
-                        SectionLabel("Why")
+                        SectionLabel(stringResource(R.string.answer_section_why))
                         why.forEach { Text("• $it", style = MaterialTheme.typography.bodyMedium) }
                     }
                     if (sources.isNotEmpty()) {
-                        SectionLabel("Sources")
+                        SectionLabel(stringResource(R.string.answer_section_sources))
                         Text(sources.joinToString(", "), style = MaterialTheme.typography.bodySmall)
                     }
                     if (timing.isNotEmpty()) {
-                        SectionLabel("Timing")
+                        SectionLabel(stringResource(R.string.answer_section_timing))
                         timing.forEach { Text(it, style = MaterialTheme.typography.bodyMedium) }
                     }
                     if (remedies.isNotEmpty()) {
-                        SectionLabel("Remedies")
+                        SectionLabel(stringResource(R.string.answer_section_remedies))
                         remedies.forEach { Text("• $it", style = MaterialTheme.typography.bodyMedium) }
                     }
                 }
@@ -93,7 +95,7 @@ fun AnswerCardView(
                         else -> MaterialTheme.colorScheme.onSurfaceVariant
                     }
                     Text(
-                        "Confidence: ${confidence.replaceFirstChar { it.uppercase() }}",
+                        stringResource(R.string.answer_confidence, confidence.replaceFirstChar { it.uppercase() }),
                         color = color,
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Medium,

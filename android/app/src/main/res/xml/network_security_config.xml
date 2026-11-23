@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Release default: HTTPS only, no cleartext anywhere (A2). The debug
+     source set overrides this file to additionally allow cleartext to the
+     emulator's host-loopback alias, where the dev backend runs. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>

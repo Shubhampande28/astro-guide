@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Per-app language support (A6): lets the UI shell (buttons, labels,
+     menus) follow English or Hindi, surfaced in Android Settings > Apps >
+     Jyotish Guru > Language via AppCompatDelegate.setApplicationLocales.
+     This is separate from the chat's own EN/HI/Hinglish language picker,
+     which controls the astrology content language, not this UI chrome. -->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="hi" />
+</locale-config>

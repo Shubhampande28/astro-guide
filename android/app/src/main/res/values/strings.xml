@@ -1,4 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jyotish Guru</string>
+
+    <!-- Welcome -->
+    <string name="welcome_headline">Ask anything about your life</string>
+    <string name="welcome_subtitle">Every answer shows the planets behind it and the classical book it comes from.</string>
+    <string name="welcome_signin">Sign in with phone</string>
+    <string name="welcome_signin_helper">Saves your chats so you can pick them up on another device.</string>
+    <string name="welcome_skip">Skip for now</string>
+    <string name="welcome_skip_helper">No phone number needed. You can always sign in later from the menu.</string>
+    <string name="welcome_error">Could not start. Check your connection and try again.</string>
+
+    <!-- Consent -->
+    <string name="consent_title">Before we begin</string>
+    <string name="consent_body">We\'ll ask for your (or your family member\'s) name, date, time, and place of birth to calculate a Kundli. This data is encrypted, never sold, and you can delete it at any time from Settings.</string>
+    <string name="consent_agree">I agree, continue</string>
+    <string name="consent_error">Something went wrong. Please try again.</string>
+
+    <!-- Login -->
+    <string name="login_phone_prompt">Enter your phone number</string>
+    <string name="login_phone_hint">+91XXXXXXXXXX</string>
+    <string name="login_send_otp">Send OTP</string>
+    <string name="login_otp_prompt">Enter the 6-digit code sent to %1$s</string>
+    <string name="login_otp_hint">OTP</string>
+    <string name="login_verify">Verify</string>
+    <string name="login_otp_error">Could not send OTP. Check your connection and try again.</string>
+    <string name="login_verify_error">Incorrect or expired code. Please try again.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_whose_kundli">Whose Kundli is this?</string>
+    <string name="onboarding_subtitle">This is used to calculate the Kundli. You can add up to 5 profiles.</string>
+    <string name="onboarding_myself">Myself</string>
+    <string name="onboarding_family_member">A family member</string>
+    <string name="onboarding_name_self">Your name</string>
+    <string name="onboarding_name_family">Their name</string>
+    <string name="onboarding_birth_date">Birth date (YYYY-MM-DD)</string>
+    <string name="onboarding_birth_time">Birth time (HH:MM, 24h)</string>
+    <string name="onboarding_time_unknown">Birth time isn\'t known</string>
+    <string name="onboarding_born_outside_india">Born outside India</string>
+    <string name="onboarding_state">State</string>
+    <string name="onboarding_district">District</string>
+    <string name="onboarding_city">City / Town</string>
+    <string name="onboarding_city_outside">Birth city (outside India)</string>
+    <string name="onboarding_validation_error">Please fill in all fields and pick a birth place from the list.</string>
+    <string name="onboarding_save_error">Could not save this profile. Please check the fields and try again.</string>
+    <string name="onboarding_create_kundli">Create Kundli</string>
+
+    <!-- Home / Chat -->
+    <string name="home_switch_profile_content_desc">Switch profile</string>
+    <string name="home_add_family_profile">Add family profile</string>
+    <string name="home_language_content_desc">Language</string>
+    <string name="home_language_english">English</string>
+    <string name="home_language_hindi">Hindi</string>
+    <string name="home_language_hinglish">Hinglish</string>
+    <string name="home_my_kundli">My Kundli</string>
+    <string name="home_delete_my_data">Delete my data</string>
+    <string name="home_delete_dialog_title">Delete all your data?</string>
+    <string name="home_delete_dialog_message">This can\'t be undone. Your profiles, chat history and Kundli data will be permanently deleted.</string>
+    <string name="home_delete_dialog_confirm">Delete</string>
+    <string name="home_delete_dialog_cancel">Cancel</string>
+    <string name="home_input_placeholder">Ask anything about your life...</string>
+    <string name="home_send_content_desc">Send</string>
+    <string name="home_send_error">Something went wrong sending that message. Please try again.</string>
+
+    <!-- Kundli -->
+    <string name="kundli_title">My Kundli</string>
+    <string name="kundli_back_content_desc">Back</string>
+    <string name="kundli_load_error">Could not load your Kundli. Please try again.</string>
+    <string name="kundli_lagna_label">Lagna (Ascendant)</string>
+    <string name="kundli_current_dasha">Current dasha: %1$s / %2$s</string>
+    <string name="kundli_grahas_label">Grahas</string>
+    <string name="kundli_header_graha">Graha</string>
+    <string name="kundli_header_sign">Sign</string>
+    <string name="kundli_header_house">House</string>
+    <string name="kundli_header_dignity">Dignity</string>
+    <string name="kundli_dasha_timeline">Vimshottari Dasha Timeline</string>
+
+    <!-- Answer card -->
+    <string name="answer_hide_details">Hide details</string>
+    <string name="answer_why_sources_timing">Why? Sources, timing</string>
+    <string name="answer_section_why">Why</string>
+    <string name="answer_section_sources">Sources</string>
+    <string name="answer_section_timing">Timing</string>
+    <string name="answer_section_remedies">Remedies</string>
+    <string name="answer_confidence">Confidence: %1$s</string>
 </resources>

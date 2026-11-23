@@ -22,7 +22,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.jyotishguru.app.R
 import com.jyotishguru.app.data.ApiService
 import com.jyotishguru.app.data.TokenStore
 import com.jyotishguru.app.ui.components.AppLogo
@@ -37,6 +40,7 @@ fun WelcomeScreen(api: ApiService, tokenStore: TokenStore, onReady: () -> Unit, 
     var loading by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
     val scope = rememberCoroutineScope()
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -47,14 +51,14 @@ fun WelcomeScreen(api: ApiService, tokenStore: TokenStore, onReady: () -> Unit, 
         Row(verticalAlignment = Alignment.CenterVertically) {
             AppLogo(modifier = Modifier.size(36.dp))
             Spacer(Modifier.size(10.dp))
-            Text("Jyotish Guru", style = MaterialTheme.typography.headlineSmall)
+            Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineSmall)
         }
 
         Spacer(Modifier.size(20.dp))
-        Text("Ask anything about your life", style = MaterialTheme.typography.headlineLarge)
+        Text(stringResource(R.string.welcome_headline), style = MaterialTheme.typography.headlineLarge)
         Spacer(Modifier.size(8.dp))
         Text(
-            "Every answer shows the planets behind it and the classical book it comes from.",
+            stringResource(R.string.welcome_subtitle),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -67,10 +71,10 @@ fun WelcomeScreen(api: ApiService, tokenStore: TokenStore, onReady: () -> Unit, 
             shape = MaterialTheme.shapes.medium,
             modifier = Modifier.fillMaxWidth().height(52.dp),
         ) {
-            Text("Sign in with phone", style = MaterialTheme.typography.labelLarge)
+            Text(stringResource(R.string.welcome_signin), style = MaterialTheme.typography.labelLarge)
         }
         Text(
-            "Saves your chats so you can pick them up on another device.",
+            stringResource(R.string.welcome_signin_helper),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 8.dp),
@@ -88,7 +92,7 @@ fun WelcomeScreen(api: ApiService, tokenStore: TokenStore, onReady: () -> Unit, 
                         tokenStore.token = response.accessToken
                         onReady()
                     } catch (e: Exception) {
-                        error = "Could not start. Check your connection and try again."
+                        error = context.getString(R.string.welcome_error)
                     } finally {
                         loading = false
                     }
@@ -99,10 +103,10 @@ fun WelcomeScreen(api: ApiService, tokenStore: TokenStore, onReady: () -> Unit, 
             colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.secondary),
             modifier = Modifier.fillMaxWidth().height(52.dp),
         ) {
-            Text("Skip for now", style = MaterialTheme.typography.labelLarge)
+            Text(stringResource(R.string.welcome_skip), style = MaterialTheme.typography.labelLarge)
         }
         Text(
-            "No phone number needed -- you can always sign in later from the menu.",
+            stringResource(R.string.welcome_skip_helper),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 8.dp),

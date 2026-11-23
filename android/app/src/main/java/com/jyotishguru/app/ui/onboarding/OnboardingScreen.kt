@@ -21,18 +21,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.jyotishguru.app.R
 import com.jyotishguru.app.data.ApiService
 import com.jyotishguru.app.data.INDIA_TIMEZONE
 import com.jyotishguru.app.data.IndiaPlacesRepository
 import com.jyotishguru.app.data.InternationalPlace
-import com.jyotishguru.app.data.ProfileCreateBody
 import com.jyotishguru.app.data.searchInternationalPlaces
 import com.jyotishguru.app.ui.components.SearchableDropdownField
-import kotlinx.coroutines.launch
 
 /** F1 onboarding: who it's for (myself vs. a family member), name, DOB,
  * time (+ "I don't know my time"), and birth place picked as State ->
@@ -53,28 +57,37 @@ fun OnboardingScreen(
     isAddingFamilyMember: Boolean = false,
     onProfileCreated: (Int) -> Unit,
 ) {
-    var isSelf by remember { mutableStateOf(!isAddingFamilyMember) }
-    var name by remember { mutableStateOf("") }
-    var birthDate by remember { mutableStateOf("") } // YYYY-MM-DD
-    var birthTime by remember { mutableStateOf("") } // HH:MM
-    var timeUnknown by remember { mutableStateOf(false) }
-    var loading by remember { mutableStateOf(false) }
-    var error by remember { mutableStateOf<String?>(null) }
+    val viewModel: OnboardingViewModel = viewModel(
+        factory = viewModelFactory { initializer { OnboardingViewModel(api) } },
+    )
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
-    var bornOutsideIndia by remember { mutableStateOf(false) }
+    uiState.createdProfileId?.let {
+        onProfileCreated(it)
+        return
+    }
+
+    var isSelf by rememberSaveable { mutableStateOf(!isAddingFamilyMember) }
+    var name by rememberSaveable { mutableStateOf("") }
+    var birthDate by rememberSaveable { mutableStateOf("") } // YYYY-MM-DD
+    var birthTime by rememberSaveable { mutableStateOf("") } // HH:MM
+    var timeUnknown by rememberSaveable { mutableStateOf(false) }
+
+    var bornOutsideIndia by rememberSaveable { mutableStateOf(false) }
 
     // India cascade.
-    var selectedState by remember { mutableStateOf("") }
-    var selectedDistrict by remember { mutableStateOf("") }
-    var selectedCityName by remember { mutableStateOf("") }
-    var selectedCityLat by remember { mutableStateOf<Double?>(null) }
-    var selectedCityLon by remember { mutableStateOf<Double?>(null) }
+    var selectedState by rememberSaveable { mutableStateOf("") }
+    var selectedDistrict by rememberSaveable { mutableStateOf("") }
+    var selectedCityName by rememberSaveable { mutableStateOf("") }
+    var selectedCityLat by rememberSaveable { mutableStateOf<Double?>(null) }
+    var selectedCityLon by rememberSaveable { mutableStateOf<Double?>(null) }
 
-    // International fallback.
-    var internationalQuery by remember { mutableStateOf("") }
+    // International fallback. `selectedInternational` is a plain `remember`
+    // (not `rememberSaveable`): it's a derived convenience, not text the
+    // user typed, and is safe to lose on process death -- the query text
+    // that drives it is still saved.
+    var internationalQuery by rememberSaveable { mutableStateOf("") }
     var selectedInternational by remember { mutableStateOf<InternationalPlace?>(null) }
-
-    val scope = rememberCoroutineScope()
 
     val districts = if (selectedState.isNotBlank()) indiaPlaces.districts(selectedState) else emptyList()
     val cities = if (selectedDistrict.isNotBlank()) indiaPlaces.cities(selectedState, selectedDistrict) else emptyList()
@@ -88,44 +101,44 @@ fun OnboardingScreen(
             .padding(24.dp),
         verticalArrangement = Arrangement.Top,
     ) {
-        Text("Whose Kundli is this?", style = MaterialTheme.typography.headlineSmall)
+        Text(stringResource(R.string.onboarding_whose_kundli), style = MaterialTheme.typography.headlineSmall)
         Text(
-            "This is used to calculate the Kundli. You can add up to 5 profiles.",
+            stringResource(R.string.onboarding_subtitle),
             style = MaterialTheme.typography.bodySmall,
             modifier = Modifier.padding(bottom = 12.dp, top = 4.dp),
         )
 
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(bottom = 16.dp)) {
-            FilterChip(selected = isSelf, onClick = { isSelf = true }, label = { Text("Myself") })
+            FilterChip(selected = isSelf, onClick = { isSelf = true }, label = { Text(stringResource(R.string.onboarding_myself)) })
             FilterChip(
                 selected = !isSelf,
                 onClick = { isSelf = false },
-                label = { Text("A family member") },
+                label = { Text(stringResource(R.string.onboarding_family_member)) },
             )
         }
 
         OutlinedTextField(
             value = name,
             onValueChange = { name = it },
-            label = { Text(if (isSelf) "Your name" else "Their name") },
+            label = { Text(stringResource(if (isSelf) R.string.onboarding_name_self else R.string.onboarding_name_family)) },
             modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
         )
         OutlinedTextField(
             value = birthDate,
             onValueChange = { birthDate = it },
-            label = { Text("Birth date (YYYY-MM-DD)") },
+            label = { Text(stringResource(R.string.onboarding_birth_date)) },
             modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
         )
         OutlinedTextField(
             value = birthTime,
             onValueChange = { birthTime = it },
-            label = { Text("Birth time (HH:MM, 24h)") },
+            label = { Text(stringResource(R.string.onboarding_birth_time)) },
             enabled = !timeUnknown,
             modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
         )
         Row(modifier = Modifier.padding(vertical = 4.dp)) {
             Checkbox(checked = timeUnknown, onCheckedChange = { timeUnknown = it })
-            Text("Birth time isn't known", modifier = Modifier.padding(top = 12.dp))
+            Text(stringResource(R.string.onboarding_time_unknown), modifier = Modifier.padding(top = 12.dp))
         }
 
         Row(modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)) {
@@ -142,12 +155,12 @@ fun OnboardingScreen(
                     internationalQuery = ""
                 },
             )
-            Text("Born outside India", modifier = Modifier.padding(top = 12.dp))
+            Text(stringResource(R.string.onboarding_born_outside_india), modifier = Modifier.padding(top = 12.dp))
         }
 
         if (!bornOutsideIndia) {
             SearchableDropdownField(
-                label = "State",
+                label = stringResource(R.string.onboarding_state),
                 value = selectedState,
                 options = indiaPlaces.states(),
                 enabled = true,
@@ -160,7 +173,7 @@ fun OnboardingScreen(
                 },
             )
             SearchableDropdownField(
-                label = "District",
+                label = stringResource(R.string.onboarding_district),
                 value = selectedDistrict,
                 options = districts,
                 enabled = selectedState.isNotBlank(),
@@ -172,7 +185,7 @@ fun OnboardingScreen(
                 },
             )
             SearchableDropdownField(
-                label = "City / Town",
+                label = stringResource(R.string.onboarding_city),
                 value = selectedCityName,
                 options = cities.map { it.name },
                 enabled = selectedDistrict.isNotBlank(),
@@ -190,7 +203,7 @@ fun OnboardingScreen(
                     internationalQuery = it
                     if (selectedInternational?.name != it) selectedInternational = null
                 },
-                label = { Text("Birth city (outside India)") },
+                label = { Text(stringResource(R.string.onboarding_city_outside)) },
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
             )
             if (internationalSuggestions.isNotEmpty()) {
@@ -215,7 +228,6 @@ fun OnboardingScreen(
 
         Button(
             onClick = {
-                error = null
                 val lat: Double?
                 val lon: Double?
                 val timezone: String
@@ -228,45 +240,28 @@ fun OnboardingScreen(
                     lon = selectedCityLon
                     timezone = INDIA_TIMEZONE
                 }
-                if (name.isBlank() || birthDate.isBlank() || lat == null || lon == null) {
-                    error = "Please fill in all fields and pick a birth place from the list."
-                    return@Button
-                }
-                loading = true
-                scope.launch {
-                    try {
-                        val profile = api.createProfile(
-                            ProfileCreateBody(
-                                name = name,
-                                relation = if (isSelf) "self" else "family",
-                                language = "en",
-                                birthDate = birthDate,
-                                birthTime = if (timeUnknown || birthTime.isBlank()) null else "$birthTime:00",
-                                birthTimeUnknown = timeUnknown,
-                                latitude = lat,
-                                longitude = lon,
-                                timezone = timezone,
-                            ),
-                        )
-                        onProfileCreated(profile.id)
-                    } catch (e: Exception) {
-                        error = "Could not save this profile. Please check the fields and try again."
-                    } finally {
-                        loading = false
-                    }
-                }
+                viewModel.createProfile(
+                    name = name,
+                    isSelf = isSelf,
+                    birthDate = birthDate,
+                    birthTime = birthTime,
+                    timeUnknown = timeUnknown,
+                    latitude = lat,
+                    longitude = lon,
+                    timezone = timezone,
+                )
             },
-            enabled = !loading,
+            enabled = !uiState.loading,
             modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
         ) {
-            Text("Create Kundli")
+            Text(stringResource(R.string.onboarding_create_kundli))
         }
 
-        if (loading) {
+        if (uiState.loading) {
             CircularProgressIndicator(modifier = Modifier.padding(top = 16.dp))
         }
-        error?.let {
-            Text(it, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
+        uiState.errorRes?.let {
+            Text(stringResource(it), color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 8.dp))
         }
     }
 }
