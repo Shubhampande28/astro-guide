@@ -182,20 +182,61 @@ jyotish-guru/
   docs/           API reference and rule-writing guide
 ```
 
-## Current status: Phase 4 in progress
+## Running the Android app
 
-Phases 0-3 are done (repo setup; Kundli engine, self-verified; rules
-engine with 200 seed rules; chat pipeline scoring 100% on the required
-50-question benchmark — see below for the one open Phase 1 item).
+The app lives in `android/`. You'll need **Android Studio** (which you
+already have installed) — open the `android/` folder as a project in it.
 
-Phase 4 adds accounts: phone OTP login (dev mode — the code is logged, not
-texted, until a real SMS gateway is picked), JWT auth, up to 5 birth
-profiles per account with birth data encrypted at rest, chat history,
-"was this accurate?" feedback, and a DPDP delete-my-data endpoint. `/chat`
-now requires a saved profile instead of raw birth details in every
-request. 143 tests passing. A Postman collection
-(`backend/docs/postman_collection.json`) walks through the whole flow
-end-to-end — see "Trying the accounts API" below.
+1. Make sure the backend is running first (`docker compose up`, as above).
+2. In Android Studio, let Gradle sync (first sync can take a few minutes).
+3. Start an emulator (Android Studio → Device Manager → the
+   `Medium_Phone_API_36.0` device already exists, or create a new one) or
+   plug in a real phone with USB debugging on.
+4. Click **Run** (the green triangle). The app is pre-configured to reach
+   the backend at `http://10.0.2.2:8000`, which is the Android emulator's
+   alias for your computer's `localhost` — this only works for the
+   emulator, not a real phone, unless you change `API_BASE_URL` in
+   `android/app/build.gradle.kts` to your computer's actual network IP.
+5. On first launch: enter any phone number → check
+   `docker compose logs backend` for a line like `OTP for +91...: 123456`
+   → enter that code → agree to the consent screen → fill in a birth
+   profile → you're in the chat screen.
+
+If you'd rather build from a terminal instead of Android Studio's Run
+button:
+```
+cd android
+./gradlew.bat assembleDebug
+```
+The APK comes out at `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+## Current status: Phase 5 in progress
+
+Phases 0-4 are done:
+- Kundli engine, self-verified against an independent implementation (one
+  open item: pre-1955 ascendant precision, see below).
+- Rules engine: safe condition DSL, 200 seed rules.
+- Chat pipeline: safety check, topic detection in EN/HI/Hinglish, 6-part
+  answer cards — scores 100% on the required 50-question benchmark.
+- Accounts: phone OTP login (dev mode — the code is logged, not texted,
+  until a real SMS gateway is picked), JWT auth, up to 5 birth profiles
+  per account with birth data encrypted at rest, chat history, "was this
+  accurate?" feedback, and a DPDP delete-my-data endpoint. A Postman
+  collection (`backend/docs/postman_collection.json`) walks through the
+  whole flow — see "Trying the accounts API" above. 143 backend tests
+  passing.
+
+Phase 5 is the first thing you can actually open and tap through: a real
+Android app (Kotlin + Jetpack Compose) with onboarding, phone OTP login,
+the chat screen with topic chips and the 6-part answer card, a profile
+switcher (for up to 5 family members), a language switch (English/Hindi/
+Hinglish), the "My Kundli" view (lagna, all 9 grahas, full dasha
+timeline), and "delete my data". It's been built, installed, and driven
+end-to-end on this machine's Android emulator — every screen in the flow
+above was visually confirmed working against the real backend, not just
+compiled. See DECISIONS.md for a few scope calls made along the way
+(plain text fields instead of native date pickers for now, no ViewModel
+layer yet, etc.) — none of them block you from using the app today.
 
 ### What I still need from you to finish Phase 1
 

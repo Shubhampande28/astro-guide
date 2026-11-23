@@ -267,6 +267,57 @@ the rest of the pipeline run without crashing; `birth_time_unknown` is
 still stored so F6 can be implemented properly later without a data
 migration.
 
+### 2026-11-23 — Android build toolchain: using Android Studio's bundled JDK/SDK directly
+**Decision:** The Android project builds with Gradle 8.14.3 (already cached
+locally), Android Gradle Plugin 8.5.2, and Kotlin 1.9.24, using the JDK and
+SDK that ship inside the Android Studio install on this machine (no
+separate JDK/SDK install), referenced via `JAVA_HOME`/`ANDROID_HOME`/
+`local.properties`.
+**Reason:** This machine had no standalone Java/Gradle/Android SDK, but
+already had Android Studio installed with everything needed bundled
+inside it, plus a working emulator AVD. Two Windows-specific gotchas
+along the way, now avoided: (1) `JAVA_HOME` containing a space ("Program
+Files") breaks some native process launches -- use the short path form
+(`C:\PROGRA~1\...`) instead; (2) `local.properties`'s `sdk.dir` is parsed
+as a Java `.properties` file, where `\` is an escape character -- use
+forward slashes (`C:/Users/...`) instead of backslashes, or the path
+silently corrupts.
+
+### 2026-11-23 — Onboarding uses plain text fields for date/time/location
+**Decision:** Birth date and time are typed as `YYYY-MM-DD` / `HH:MM` text
+rather than native Android date/time picker dialogs; birth place is
+latitude/longitude text fields rather than a place-name search.
+**Reason:** Matches the backend's existing scope decisions (no place-name
+geocoding yet, see the Phase 1 DECISIONS.md entry) and ships a working
+onboarding flow fast. Native pickers and place autocomplete are
+straightforward additions later and don't change the API contract, so
+deferring them doesn't create rework risk.
+
+### 2026-11-23 — No ViewModel layer; screens hold their own state
+**Decision:** Compose screens use `remember { mutableStateOf(...) }` and
+`rememberCoroutineScope()` directly, with a thin `AppContainer`
+(`JyotishGuruApp`) providing the shared `ApiService`/`TokenStore`, rather
+than a ViewModel per screen.
+**Reason:** State does not need to survive process death for this MVP
+(whoever's asking a question again after a config change can just re-ask),
+and this keeps the codebase small and easy to follow for a founder who
+isn't a developer. Worth revisiting (real ViewModels + state restoration)
+once the app has paying users and losing in-progress chat input to a
+rotation becomes a real complaint.
+
+### 2026-11-23 — Self-verified on a real emulator, not just "it compiles"
+**Decision:** Beyond a successful Gradle build, the app was installed on
+the project's existing Android emulator (AVD `Medium_Phone_API_36.0`) and
+driven end-to-end via `adb`: OTP login, consent, profile creation, a real
+chat exchange against the live rules engine, the expandable answer card,
+the profile/language menu, and the Kundli view -- each step screenshotted
+and visually confirmed, the same standard used for the backend's Docker
+verification.
+**Reason:** "Builds successfully" and "works" are different claims; this
+project's working rules call for tests/verification before calling
+something done, and a UI is not meaningfully verified by its build log
+alone.
+
 ### 2026-11-23 — Ephemeris file is downloaded, not committed
 **Decision:** The NASA JPL DE440s file (~32MB) downloads automatically into
 `backend/data/` (gitignored) on first use, via Skyfield's `Loader`, instead
