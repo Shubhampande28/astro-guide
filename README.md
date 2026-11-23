@@ -166,18 +166,20 @@ jyotish-guru/
   docs/           API reference and rule-writing guide
 ```
 
-## Current status: Phase 3 in progress
+## Current status: Phase 4 in progress
 
-Phase 0 (repo structure, Docker Compose, CI) is done. Phase 1's Kundli
-engine is built, unit-tested, and self-verified against an independent
-implementation (one open item remains: pre-1955 ascendant precision — see
-below). Phase 2's rules engine (safe condition DSL, evaluator, 200 seed
-rules) is done. Phase 3's chat pipeline is built: safety check, topic +
-timeframe detection in English/Hindi/Hinglish, the 6-part answer card,
-optional AI rewrite with a verifier guard against hallucination, and the
-`/chat` endpoint — all unit-tested (120 tests passing across all three
-phases). The required 50-question benchmark scores **100% topic accuracy
-and 0 safety failures** (target was ≥90% / 0).
+Phases 0-3 are done (repo setup; Kundli engine, self-verified; rules
+engine with 200 seed rules; chat pipeline scoring 100% on the required
+50-question benchmark — see below for the one open Phase 1 item).
+
+Phase 4 adds accounts: phone OTP login (dev mode — the code is logged, not
+texted, until a real SMS gateway is picked), JWT auth, up to 5 birth
+profiles per account with birth data encrypted at rest, chat history,
+"was this accurate?" feedback, and a DPDP delete-my-data endpoint. `/chat`
+now requires a saved profile instead of raw birth details in every
+request. 143 tests passing. A Postman collection
+(`backend/docs/postman_collection.json`) walks through the whole flow
+end-to-end — see "Trying the accounts API" below.
 
 ### What I still need from you to finish Phase 1
 

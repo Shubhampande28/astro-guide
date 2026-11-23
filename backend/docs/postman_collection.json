@@ -1,0 +1,177 @@
+{
+  "info": {
+    "name": "Jyotish Guru API - Phase 4",
+    "description": "Auth (phone OTP), profiles, chat + history, feedback, and DPDP delete-my-data. Run requests top to bottom in order; each one saves what the next one needs into collection variables. The only manual step is 'Verify OTP': check the backend logs (docker compose logs backend) for the 6-digit code it printed and paste it into the otp_code variable before running that request.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8000" },
+    { "key": "phone_number", "value": "+919876543210" },
+    { "key": "otp_code", "value": "REPLACE_WITH_CODE_FROM_LOGS" },
+    { "key": "access_token", "value": "" },
+    { "key": "profile_id", "value": "" },
+    { "key": "message_id", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "1. Request OTP",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/auth/otp/request",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone_number\": \"{{phone_number}}\"}"
+        },
+        "description": "Returns 204. The 6-digit code is logged by the backend (dev mode, no real SMS yet) -- check 'docker compose logs backend' and copy it into the otp_code collection variable."
+      }
+    },
+    {
+      "name": "2. Verify OTP (fill in otp_code first)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const body = pm.response.json();",
+              "pm.environment.set('access_token', body.access_token);",
+              "pm.collectionVariables.set('access_token', body.access_token);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/auth/otp/verify",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone_number\": \"{{phone_number}}\", \"code\": \"{{otp_code}}\"}"
+        }
+      }
+    },
+    {
+      "name": "3. Give Consent",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+        "url": "{{base_url}}/me/consent"
+      }
+    },
+    {
+      "name": "4. Create Profile",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const body = pm.response.json();",
+              "pm.collectionVariables.set('profile_id', body.id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": "{{base_url}}/profiles",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"relation\": \"self\",\n  \"language\": \"en\",\n  \"birth_date\": \"1990-05-15\",\n  \"birth_time\": \"08:30:00\",\n  \"birth_time_unknown\": false,\n  \"latitude\": 28.6139,\n  \"longitude\": 77.2090,\n  \"timezone\": \"Asia/Kolkata\"\n}"
+        }
+      }
+    },
+    {
+      "name": "5. List Profiles",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+        "url": "{{base_url}}/profiles"
+      }
+    },
+    {
+      "name": "6. Get One Profile",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+        "url": "{{base_url}}/profiles/{{profile_id}}"
+      }
+    },
+    {
+      "name": "7. Update Profile",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": "{{base_url}}/profiles/{{profile_id}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Updated Name\"}"
+        }
+      }
+    },
+    {
+      "name": "8. Send Chat Message",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const body = pm.response.json();",
+              "pm.collectionVariables.set('message_id', body.message_id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": "{{base_url}}/chat",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"profile_id\": {{profile_id}}, \"message\": \"How is my career looking?\"}"
+        }
+      }
+    },
+    {
+      "name": "9. Get Chat History",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+        "url": "{{base_url}}/profiles/{{profile_id}}/history"
+      }
+    },
+    {
+      "name": "10. Submit Feedback",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": "{{base_url}}/profiles/{{profile_id}}/history/{{message_id}}/feedback",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"is_accurate\": true}"
+        }
+      }
+    },
+    {
+      "name": "11. Delete My Data (DPDP)",
+      "request": {
+        "method": "DELETE",
+        "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+        "url": "{{base_url}}/me",
+        "description": "Deletes the user, all profiles, all chat history, and all feedback. After this, request 5 (List Profiles) with the same token should return 401."
+      }
+    }
+  ]
+}

@@ -16,6 +16,11 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     gemini_api_key: str = ""
     jwt_secret: str = "change-me-in-production"
+    jwt_access_token_minutes: int = 60 * 24 * 30  # 30 days
+
+    # Fernet key for encrypting birth data at rest (DPDP). Generate with:
+    # python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+    encryption_key: str = "ZNwkmDj4LapAt9MUyIIk6MCfBG8w_0xp4TKKqieEvPY="
 
 
 @lru_cache

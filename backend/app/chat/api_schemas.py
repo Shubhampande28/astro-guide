@@ -1,25 +1,19 @@
 """Pydantic request/response models for the /chat endpoint."""
 
-from datetime import date, time
-
 from pydantic import BaseModel, Field
 
 from app.chat.schemas import AnswerCard
 
 
 class ChatRequest(BaseModel):
+    profile_id: int
     message: str
-    language: str = Field(default="en", pattern="^(en|hi|hinglish)$")
     previous_topic: str | None = None
-
-    birth_date: date
-    birth_time: time
-    timezone: str
-    latitude: float = Field(ge=-90, le=90)
-    longitude: float = Field(ge=-180, le=180, description="East positive")
+    language: str | None = Field(default=None, pattern="^(en|hi|hinglish)$")
 
 
 class ChatResponse(BaseModel):
+    message_id: int
     topic: str | None
     summary: str
     why: list[str]
@@ -34,5 +28,5 @@ class ChatResponse(BaseModel):
     ai_rewritten_summary: str | None
 
     @classmethod
-    def from_card(cls, card: AnswerCard) -> "ChatResponse":
-        return cls(**card.__dict__)
+    def from_card(cls, card: AnswerCard, message_id: int) -> "ChatResponse":
+        return cls(message_id=message_id, **card.__dict__)
