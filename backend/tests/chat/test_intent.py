@@ -1,3 +1,4 @@
+from app.chat import ai_writer
 from app.chat.intent import detect
 
 
@@ -29,8 +30,29 @@ def test_detects_restricted_stock_topic():
     assert detect("which stock should I buy?").topic == "stock"
 
 
-def test_unclear_message_has_no_topic():
+def test_unclear_message_has_no_topic(monkeypatch):
+    # Force the AI classifier fallback off so this stays deterministic
+    # regardless of whether a real AI_PROVIDER is configured in .env.
+    monkeypatch.setattr(ai_writer, "classify_topic", lambda message, topics: None)
     assert detect("hello").topic is None
+
+
+def test_unkeyworded_phrasing_falls_back_to_ai_classification(monkeypatch):
+    monkeypatch.setattr(ai_writer, "classify_topic", lambda message, topics: "marriage")
+    assert detect("how's my love life looking these days").topic == "marriage"
+
+
+def test_ai_classifier_can_still_route_into_a_restricted_topic(monkeypatch):
+    # Safety-critical: a phrasing with no restricted keyword must still be
+    # caught if the AI classifier recognizes it, not slip through to a
+    # normal reading just because it skipped the keyword list.
+    monkeypatch.setattr(ai_writer, "classify_topic", lambda message, topics: "medical")
+    assert detect("will this thing on my skin ever go away").topic == "medical"
+
+
+def test_ai_classifier_unsure_still_falls_back_to_clarifying(monkeypatch):
+    monkeypatch.setattr(ai_writer, "classify_topic", lambda message, topics: None)
+    assert detect("asdkjasdkj").topic is None
 
 
 def test_detects_money_for_everyday_phrasing_not_just_the_word_money():

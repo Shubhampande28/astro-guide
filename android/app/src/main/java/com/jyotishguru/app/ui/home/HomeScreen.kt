@@ -40,7 +40,6 @@ import com.jyotishguru.app.data.ChatResponse
 import com.jyotishguru.app.data.ProfileResponse
 import com.jyotishguru.app.data.TokenStore
 import com.jyotishguru.app.ui.components.AnswerCardView
-import com.jyotishguru.app.ui.components.TopicChips
 import kotlinx.coroutines.launch
 
 private data class DisplayMessage(
@@ -217,10 +216,6 @@ fun HomeScreen(
         },
     ) { padding ->
         Column(modifier = Modifier.fillMaxSize().padding(padding).padding(horizontal = 12.dp)) {
-            TopicChips(onTopicSelected = { topic ->
-                sendMessage("How is my ${topic.replace('_', ' ')} looking?")
-            })
-
             LazyColumn(modifier = Modifier.weight(1f).fillMaxWidth()) {
                 items(messages) { message ->
                     message.questionText?.let {
@@ -251,7 +246,7 @@ fun HomeScreen(
                 OutlinedTextField(
                     value = inputText,
                     onValueChange = { inputText = it },
-                    placeholder = { Text("Ask about your career, marriage...") },
+                    placeholder = { Text("Ask anything about your life...") },
                     modifier = Modifier.weight(1f),
                 )
                 if (sending) {

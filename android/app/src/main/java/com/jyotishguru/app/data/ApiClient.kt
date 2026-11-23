@@ -1,6 +1,7 @@
 package com.jyotishguru.app.data
 
 import com.jyotishguru.app.BuildConfig
+import java.util.concurrent.TimeUnit
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -33,6 +34,11 @@ object ApiClient {
         val client = OkHttpClient.Builder()
             .addInterceptor(AuthInterceptor(tokenStore))
             .addInterceptor(logging)
+            // /chat can wait on the optional AI rewrite step (CLAUDE.md 5.3
+            // step 6); OkHttp's 10s default read timeout is too short for that.
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
             .build()
 
         val retrofit = Retrofit.Builder()

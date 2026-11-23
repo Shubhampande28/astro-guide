@@ -10,6 +10,7 @@ pipeline must decline these rather than run a reading.
 import re
 from dataclasses import dataclass
 
+from app.chat import ai_writer
 from app.rules.schema import TOPICS
 
 RESTRICTED_TOPICS = ("death", "medical", "legal", "stock")
@@ -314,6 +315,9 @@ def _find_keyword_topic(lowered: str, patterns: dict[str, list[re.Pattern[str]]]
     return None
 
 
+_ALL_CLASSIFIABLE_TOPICS = [*TOPICS, *RESTRICTED_TOPICS]
+
+
 def detect(message: str, previous_topic: str | None = None) -> Intent:
     """Detects topic and timeframe. `previous_topic` supports follow-ups
     like "and in 2028?" that carry no topic keyword of their own."""
@@ -333,5 +337,16 @@ def detect(message: str, previous_topic: str | None = None) -> Intent:
     is_followup_phrase = any(marker in lowered for marker in _FOLLOWUP_MARKERS)
     if (is_followup_phrase or year is not None) and previous_topic in TOPICS:
         return Intent(topic=previous_topic, year=year, is_followup=True)
+
+    # Keywords first, per CLAUDE.md 5.3 -- but everyday phrasing ("my love
+    # life", "us relations") often carries none of them. Rather than bounce
+    # every such question to a clarifying prompt, ask the AI to pick the
+    # closest of the 8 topics (or a restricted one, so this can never be used
+    # to sneak past the safety gate above -- see ai_writer.classify_topic).
+    # If AI is off, unconfigured, or unsure, this returns None and the
+    # pipeline falls back to the clarifying question exactly as before.
+    classified = ai_writer.classify_topic(message, _ALL_CLASSIFIABLE_TOPICS)
+    if classified:
+        return Intent(topic=classified, year=year, is_followup=False)
 
     return Intent(topic=None, year=year, is_followup=False)

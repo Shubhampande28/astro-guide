@@ -67,3 +67,36 @@ def test_network_failure_returns_none_not_raises(monkeypatch):
 
     result = ai_writer.rewrite_summary("career", "favourable", 5, ["fact"], "en")
     assert result is None
+
+
+def test_classify_topic_returns_the_ai_pick(monkeypatch):
+    monkeypatch.setenv("AI_PROVIDER", "claude")
+    monkeypatch.setenv("CLAUDE_API_KEY", "fake-key")
+
+    def fake_post_json(url, headers, payload):
+        return {"content": [{"text": "marriage"}]}
+
+    monkeypatch.setattr(ai_writer, "_post_json", fake_post_json)
+
+    result = ai_writer.classify_topic("how's my love life looking", ["career", "marriage", "money"])
+    assert result == "marriage"
+
+
+def test_classify_topic_rejects_a_reply_outside_the_given_list(monkeypatch):
+    monkeypatch.setenv("AI_PROVIDER", "claude")
+    monkeypatch.setenv("CLAUDE_API_KEY", "fake-key")
+
+    def fake_post_json(url, headers, payload):
+        # A hallucinated or off-menu answer must never be trusted as a topic.
+        return {"content": [{"text": "astrology"}]}
+
+    monkeypatch.setattr(ai_writer, "_post_json", fake_post_json)
+
+    result = ai_writer.classify_topic("blah blah", ["career", "marriage", "money"])
+    assert result is None
+
+
+def test_classify_topic_returns_none_when_ai_is_off(monkeypatch):
+    monkeypatch.setenv("AI_PROVIDER", "none")
+    result = ai_writer.classify_topic("how's my love life looking", ["career", "marriage"])
+    assert result is None

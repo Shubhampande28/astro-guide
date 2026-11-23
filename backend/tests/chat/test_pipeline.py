@@ -1,4 +1,5 @@
 from app.chat.pipeline import handle_message
+from app.config import get_settings
 from app.rules.loader import load_all_rules
 
 RULES = list(load_all_rules())
@@ -30,9 +31,11 @@ def test_normal_topic_question_returns_full_card(sample_chart):
     assert card.is_safety_response is False
 
 
-def test_ai_rewrite_is_none_when_provider_is_none(sample_chart):
-    # .env.example defaults AI_PROVIDER to "none"; this must never crash
-    # and must leave ai_rewritten_summary unset so the template is used.
+def test_ai_rewrite_is_none_when_provider_is_none(sample_chart, monkeypatch):
+    # Force the provider off regardless of the real .env (a dev machine may
+    # have a live AI_PROVIDER configured): this must never crash and must
+    # leave ai_rewritten_summary unset so the template is used.
+    monkeypatch.setattr(get_settings(), "ai_provider", "none")
     card = handle_message("how is my career looking?", sample_chart, RULES)
     assert card.ai_rewritten_summary is None
 
