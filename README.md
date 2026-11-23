@@ -73,30 +73,46 @@ proceeds on the strength of the self-verification above. The pre-1955
 ascendant precision question remains open — worth revisiting before this
 engine is used for real predictions involving pre-1955 births.
 
-## Trying the chat pipeline
+## Trying the accounts API (auth, profiles, chat, history)
 
-With the containers running, open **http://localhost:8000/docs**, find
-**POST /chat**, click "Try it out", and send a message plus birth details:
+The easiest way to try the whole Phase 4 flow is the Postman collection at
+`backend/docs/postman_collection.json` — import it into Postman and run
+the requests top to bottom. The only manual step: after "1. Request OTP",
+check `docker compose logs backend` for a line like `OTP for +91...: 123456
+(dev mode, not actually sent)` and paste that code into the collection's
+`otp_code` variable before running "2. Verify OTP". Everything else
+(tokens, profile ID, message ID) is captured automatically between steps.
 
-```json
-{
-  "message": "How is my career looking?",
-  "language": "en",
-  "birth_date": "1990-05-15",
-  "birth_time": "08:30:00",
-  "timezone": "Asia/Kolkata",
-  "latitude": 28.6139,
-  "longitude": 77.2090
-}
-```
+Or do it by hand at **http://localhost:8000/docs**:
 
-`language` can be `en`, `hi`, or `hinglish`. You'll get back the full
-6-part answer card: topic, summary, why (matched rules), sources, timing,
-remedies, and confidence. Try a distress message (e.g. "I want to kill
-myself") and you'll see it short-circuits to the Tele-MANAS helpline
-instead of running a reading — try a restricted one too (e.g. "when will I
-die?") and you'll see it's politely declined instead of treated as a
-crisis.
+1. **POST /auth/otp/request** `{"phone_number": "+919876543210"}` → check
+   the Docker logs for the code (there's no real SMS gateway yet — see
+   DECISIONS.md).
+2. **POST /auth/otp/verify** with that phone number + code → returns a
+   JWT `access_token`.
+3. Click the **Authorize** button at the top of the `/docs` page and
+   paste the token in, or add `Authorization: Bearer <token>` to each
+   request's headers.
+4. **POST /me/consent** — required once before creating any profile
+   (DPDP: no birth data is stored without explicit consent).
+5. **POST /profiles** with name/birth details/location → up to 5 per
+   account.
+6. **POST /chat** with `{"profile_id": ..., "message": "How is my career
+   looking?"}` — same 6-part answer card as before, but now it looks up
+   the profile instead of taking birth details directly, and saves the
+   exchange.
+7. **GET /profiles/{id}/history** to see saved chats; **POST
+   /profiles/{id}/history/{message_id}/feedback** with
+   `{"is_accurate": true}` for the "was this accurate?" feature (F11).
+8. **DELETE /me** — DPDP's delete-my-data. Removes the account and every
+   profile, chat, and feedback row. The JWT stops working immediately
+   after (confirmed — try any request with the same token afterward and
+   you'll get a 401).
+
+Try a distress message (e.g. "I want to kill myself") through `/chat` and
+you'll see it short-circuits to the Tele-MANAS helpline instead of running
+a reading — try a restricted one too (e.g. "when will I die?") and you'll
+see it's politely declined instead of treated as a crisis.
 
 The AI rewrite step is off by default (`AI_PROVIDER=none` in `.env`) —
 answers come from the templates. If you later get a Claude/OpenAI/Gemini
